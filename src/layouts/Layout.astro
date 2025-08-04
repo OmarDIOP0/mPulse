@@ -1,22 +1,73 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+// src/layouts/MainLayout.astro
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+const { title } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title} | mPulse - Gestion de budget intelligente</title>
+    
+    <!-- Importations CSS critiques -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+      :root {
+        --color-primary: #00377d;
+        --color-secondary: #ffd100;
+        --color-danger: #ff0000;
+        --color-dark: #09090b;
+        --color-light: #f2f5f9;
+      }
+    </style>
+</head>
+<body class="font-sans bg-light text-dark">
+    <Navbar />
+    
+    <main class="min-h-screen">
+        <slot />
+    </main>
+    
+    <Footer />
+    
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</body>
+
+<!-- Ajoutez ce script à la fin du body -->
+<script>
+    // Gestion du menu mobile améliorée
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (menuButton && mobileMenu) {
+            menuButton.addEventListener('click', function() {
+                const isOpen = mobileMenu.classList.toggle('hidden');
+                document.body.classList.toggle('menu-open', !isOpen);
+                
+                // Animation
+                if (!isOpen) {
+                    mobileMenu.style.opacity = '0';
+                    mobileMenu.style.transform = 'translateY(-10px)';
+                    setTimeout(() => {
+                        mobileMenu.style.opacity = '1';
+                        mobileMenu.style.transform = 'translateY(0)';
+                    }, 10);
+                }
+            }); 
+            
+            // Fermer le menu quand on clique sur un lien
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    document.body.classList.remove('menu-open');
+                });
+            });
+        }
+    });
+</script>
+</html>

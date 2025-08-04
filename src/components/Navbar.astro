@@ -1,0 +1,109 @@
+---
+// src/components/Navbar.astro
+const navItems = [
+    { name: "Fonctionnalités", path: "/features" },
+    { name: "Solutions", path: "/solutions/particuliers" },
+    { name: "Tarifs", path: "/pricing" },
+    { name: "À propos", path: "/about" },
+];
+const currentUrl = Astro.url.pathname;
+---
+<header class="bg-primary text-white shadow-sm sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <a href="/" class="flex items-center space-x-2">
+                <!-- Logo en blanc pour meilleur contraste -->
+                <h1 class="text-2xl font-bold text-white">m<span class="text-secondary">Pulse</span></h1>
+            </a>
+            
+            <!-- Menu desktop - Couleur forcée avec !important -->
+            <nav class="hidden md:flex items-center space-x-8">
+                {navItems.map((item) => {
+                    const isActive = currentUrl.startsWith(item.path);
+                    return (
+                        <a 
+                            href={item.path}
+                            class={`font-medium transition-colors ${
+                                isActive 
+                                    ? 'text-secondary font-semibold border-b-2 border-secondary' 
+                                    : 'text-white hover:text-secondary'
+                            }`}
+                        >
+                            {item.name}
+                        </a>
+                    );
+                })}
+            </nav>
+
+            <div id="mobile-menu" class="hidden md:hidden pt-4 pb-2">
+                <div class="flex flex-col space-y-3">
+                    {navItems.map((item) => {
+                        const isActive = currentUrl.startsWith(item.path);
+                        return (
+                            <a 
+                                href={item.path}
+                                class={`px-4 py-2 rounded-lg transition-colors ${
+                                    isActive
+                                        ? 'bg-secondary/20 text-secondary font-semibold'
+                                        : 'text-white hover:bg-white/10'
+                                }`}
+                            >
+                                {item.name}
+                            </a>
+                        );
+                    })}
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <a 
+                    href="/contact" 
+                    class="hidden md:block px-6 py-2 border border-secondary text-secondary rounded-full hover:bg-secondary hover:text-dark transition-colors font-medium"
+                >
+                    Contactez-nous
+                </a>
+                <a 
+                    href="#" 
+                    class="hidden lg:block px-6 py-2 bg-primary text-white rounded-full hover:bg-[#002a63] transition-colors font-medium"
+                >
+                    Essai gratuit
+                </a>
+                
+                <!-- Bouton burger en blanc -->
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Menu mobile - Couleurs adaptées -->
+        <div id="mobile-menu" class="hidden md:hidden pt-4 pb-2 transition-opacity duration-300 ease-in-out transform">
+            <div class="flex flex-col space-y-3">
+                {navItems.map((item) => (
+                    <a 
+                        href={item.path} 
+                        class="block px-4 py-2 text-white hover:bg-white/10 rounded-lg transition-colors"
+                    >
+                        {item.name}
+                    </a>
+                ))}
+                <div class="pt-2 border-t border-white/20">
+                    <a 
+                        href="/contact" 
+                        class="block px-4 py-2 text-secondary font-medium"
+                    >
+                        Contactez-nous
+                    </a>
+                    <a 
+                        href="#" 
+                        class="block px-4 py-2 bg-primary text-white rounded-lg text-center mt-2"
+                    >
+                        Essai gratuit
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

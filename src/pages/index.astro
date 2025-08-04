@@ -1,11 +1,140 @@
 ---
-import Welcome from '../components/Welcome.astro';
+// src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Hero from '../components/Hero.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import Testimonial from '../components/Testimonial.astro';
+import CTA from '../components/CTA.astro';
 ---
-
-<Layout>
-	<Welcome />
+<Layout title="Accueil">
+    <Hero />
+    
+    <!-- Section clients -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <p class="text-center text-gray-500 mb-8">Rejoignez des milliers d'utilisateurs satisfaits</p>
+            <div class="flex flex-wrap justify-center items-center gap-12 opacity-70">
+                <img src="https://via.placeholder.com/150x60/00377d/ffffff?text=Entreprise+A" alt="Logo entreprise" class="h-8 object-contain">
+                <img src="https://via.placeholder.com/150x60/00377d/ffffff?text=Startup+B" alt="Logo entreprise" class="h-8 object-contain">
+                <img src="https://via.placeholder.com/150x60/00377d/ffffff?text=Marque+C" alt="Logo entreprise" class="h-8 object-contain">
+                <img src="https://via.placeholder.com/150x60/00377d/ffffff?text=Société+D" alt="Logo entreprise" class="h-8 object-contain">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section valeur phare -->
+    <section class="py-20 bg-[#f2f5f9]">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#00377d] mb-6">Prenez le contrôle de vos finances</h2>
+                    <p class="text-lg text-gray-600 mb-8">
+                        mPulse révolutionne la gestion budgétaire avec des outils intelligents qui s'adaptent à vos besoins. Visualisez, planifiez et optimisez vos dépenses comme jamais auparavant.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#ffd100]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <p class="text-gray-600">Analyse automatique de vos habitudes de dépenses</p>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#ffd100]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <p class="text-gray-600">Alertes intelligentes pour éviter les dépassements</p>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#ffd100]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <p class="text-gray-600">Tableaux de bord personnalisables</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <img 
+                        src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                        alt="Tableau de bord mPulse" 
+                        class="rounded-xl shadow-xl border border-gray-200"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section fonctionnalités -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#00377d] mb-4">Des outils conçus pour vous</h2>
+                <p class="text-lg text-gray-600">
+                    Découvrez comment mPulse transforme la gestion de budget en expérience intuitive et puissante.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <FeatureCard 
+                    title="Suivi en temps réel"
+                    description="Visualisez vos flux financiers instantanément avec nos graphiques interactifs."
+                    icon="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                />
+                <FeatureCard 
+                    title="Planification intelligente"
+                    description="Créez des budgets personnalisés qui s'adaptent à votre style de vie."
+                    icon="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                    image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                />
+                <FeatureCard 
+                    title="Synchronisation bancaire"
+                    description="Connectez vos comptes pour une vue unifiée de vos finances."
+                    icon="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    image="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                />
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section témoignages -->
+    <section class="py-20 bg-[#00377d] text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Ils utilisent mPulse</h2>
+                <p class="text-lg opacity-80">
+                    Découvrez ce que nos utilisateurs disent de leur expérience.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <Testimonial 
+                    quote="mPulse a révolutionné ma gestion financière. Enfin une application qui s'adapte à mes besoins !"
+                    author="Marie D."
+                    role="Freelance"
+                    avatar="https://randomuser.me/api/portraits/women/44.jpg"
+                />
+                <Testimonial 
+                    quote="La synchronisation automatique avec nos comptes a fait gagner un temps précieux à toute l'équipe."
+                    author="Thomas L."
+                    role="CEO Startup"
+                    avatar="https://randomuser.me/api/portraits/men/32.jpg"
+                />
+                <Testimonial 
+                    quote="Les rapports personnalisés m'ont permis d'identifier des économies insoupçonnées."
+                    author="Sophie T."
+                    role="Responsable financier"
+                    avatar="https://randomuser.me/api/portraits/women/68.jpg"
+                />
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section CTA -->
+    <CTA />
 </Layout>

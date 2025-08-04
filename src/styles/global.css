@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Custom styles */
+body {
+    font-family: 'Inter', sans-serif;
+}
+button {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Style pour les inputs focus */
+input:focus, select:focus {
+  box-shadow: 0 0 0 2px rgba(0, 55, 125, 0.2);
+}
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+/* Animation du menu mobile */
+#mobile-menu {
+    transition: all 0.3s ease-out;
+}
+
+/* Empêche le scroll quand le menu est ouvert */
+body.menu-open {
+    overflow: hidden;
+}
+/* Style pour les liens actifs */
+.nav-link.active {
+    color: var(--color-secondary);
+    font-weight: 600;
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-secondary);
+}
+/* Dans votre global.css */
+.rotate-180 {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Animation d'ouverture/fermeture de la FAQ */
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 1s cubic-bezier(0.4,0,0.2,1), opacity 0.3s;
+    display: block;
+}
+
+.faq-toggle[aria-expanded="true"] + .faq-content {
+    max-height: 500px; /* Ajustez selon la taille de votre contenu */
+    opacity: 1;
+}

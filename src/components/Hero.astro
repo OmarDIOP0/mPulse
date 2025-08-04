@@ -1,0 +1,111 @@
+---
+// src/components/Hero.astro
+---
+<section class="relative py-24 md:py-32 lg:py-40 bg-gradient-to-r from-[#00377d] to-[#002a63] text-white overflow-hidden">
+    <!-- Fond animé avec éléments décoratifs -->
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center"></div>
+    </div>
+    
+    <!-- Points décoratifs -->
+    <div class="absolute top-0 left-0 w-32 h-32 rounded-full bg-[#ffd100]/10 blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 w-64 h-64 rounded-full bg-[#ffd100]/10 blur-3xl"></div>
+    
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+            <!-- Texte principal -->
+            <div class="lg:w-1/2 text-center lg:text-left animate-fadeIn">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                    Maîtrisez votre budget avec <span class="text-[#ffd100]">mPulse</span>
+                </h1>
+                <p class="text-xl md:text-2xl opacity-90 mb-8 max-w-2xl mx-auto lg:mx-0">
+                    La solution intelligente pour une gestion financière claire et sans stress.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                    <a 
+                        href="/pricing" 
+                        class="px-8 py-3 bg-[#ffd100] text-[#09090b] rounded-full hover:bg-[#e6c000] transition-colors font-medium text-lg shadow-lg hover:shadow-xl"
+                    >
+                        Commencer l'essai gratuit
+                    </a>
+                    <a 
+                        href="/features" 
+                        class="px-8 py-3 bg-white/10 text-white border border-white/20 rounded-full hover:bg-white/20 transition-colors font-medium text-lg"
+                    >
+                        Voir les fonctionnalités
+                    </a>
+                </div>
+                
+                <div class="mt-8 flex items-center justify-center lg:justify-start space-x-2 text-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#ffd100]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Aucune carte de crédit requise</span>
+                    <span class="opacity-50">•</span>
+                    <span>14 jours gratuits</span>
+                </div>
+            </div>
+            
+            <!-- Visuel hero -->
+            <div class="lg:w-1/2 mt-12 lg:mt-0 animate-fadeIn" style="animation-delay: 0.2s">
+                <div class="relative">
+                    <!-- Fond de carte -->
+                    <div class="absolute -inset-4 bg-[#ffd100]/20 rounded-2xl rotate-6"></div>
+                    
+                    <!-- Image principale -->
+                    <div class="relative rounded-xl overflow-hidden shadow-2xl border border-white/10">
+                        <img 
+                            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                            alt="Tableau de bord mPulse" 
+                            class="w-full h-auto"
+                            loading="eager"
+                        >
+                        
+                        <!-- Badge sur l'image -->
+                        <div class="absolute -top-4 -right-4 bg-[#ffd100] text-[#09090b] px-4 py-2 rounded-full font-bold text-sm shadow-lg">
+                            Nouveau
+                        </div>
+                    </div>
+                    
+                    <!-- Mini carte flottante -->
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-xl border border-gray-200 w-64">
+                        <div class="flex items-center mb-3">
+                            <div class="h-3 w-3 rounded-full bg-green-500 mr-2"></div>
+                            <span class="text-sm font-medium text-gray-700">Objectif atteint</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-2">Économies mensuelles</p>
+                        <p class="text-2xl font-bold text-[#00377d]">125 000 <strong class="text-[#ffd100]">FCFA</strong></p>
+                        <div class="h-2 bg-gray-200 rounded-full mt-2 overflow-hidden">
+                            <div class="h-full bg-[#ffd100] rounded-full" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Animation Lottie -->
+    <div class="absolute bottom-0 left-0 w-full h-32 overflow-hidden z-0 opacity-20">
+        <lottie-player 
+            src="https://assets10.lottiefiles.com/packages/lf20_sk5h1kfn.json" 
+            background="transparent" 
+            speed="1" 
+            loop 
+            autoplay
+            class="w-full h-full"
+        ></lottie-player>
+    </div>
+</section>
+
+<style>
+    .animate-fadeIn {
+        animation: fadeIn 1s ease-out forwards;
+        opacity: 0;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
