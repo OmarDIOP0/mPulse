@@ -5,32 +5,21 @@ import Hero from '../components/Hero.astro';
 import FeatureCard from '../components/FeatureCard.astro';
 import Testimonial from '../components/Testimonial.astro';
 import CTA from '../components/CTA.astro';
-import Dashboard from '../assets/icons/dashboard.png';
+import Dashboard from '../assets/icons/dashboardF.png';
+import Stock from '../assets/icons/stock.jpg';
+import Performance from '../assets/icons/performance.jpg';
 ---
 <Layout title="Accueil">
     <Hero />
     
-    <!-- Section clients -->
-    <!-- <section class="py-12 bg-white">
-        <div class="container mx-auto px-6">
-            <p class="text-center text-gray-500 mb-8">Rejoignez des milliers d'utilisateurs satisfaits</p>
-            <div class="flex flex-wrap justify-center items-center gap-12 opacity-70">
-                <img src="https://via.placeholder.com/150x60/00377d/ffffff?text=Entreprise+A" alt="Logo entreprise" class="h-8 object-contain">
-                <img src="https://via.placeholder.com/150x60/00377d/ffffff?text=Startup+B" alt="Logo entreprise" class="h-8 object-contain">
-                <img src="https://via.placeholder.com/150x60/00377d/ffffff?text=Marque+C" alt="Logo entreprise" class="h-8 object-contain">
-                <img src="https://via.placeholder.com/150x60/00377d/ffffff?text=Société+D" alt="Logo entreprise" class="h-8 object-contain">
-            </div>
-        </div>
-    </section>
-     -->
 <!-- Section valeur phare avec carousel Tailwind CSS -->
 <section class="py-20 bg-gradient-to-r from-[#f8fafc] to-[#f2f5f9]">
     <div class="container mx-auto px-6">
         <div class="flex flex-col lg:flex-row items-center gap-12">
             <!-- Contenu texte -->
             <div class="lg:w-1/2">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#00377d] mb-6">
-                    Votre portefeuille électronique <span class="text-secondary">partout avec vous</span>
+                <h2 class="text-3xl md:text-3xl font-bold text-[#00377d] mb-6">
+                    Votre solution de paiement <span class="text-secondary">tout-en-un</span>
                 </h2>
                 
                 <!-- Onglets Particulier/Entreprise -->
@@ -52,83 +41,65 @@ import Dashboard from '../assets/icons/dashboard.png';
                     <!-- Contenu Particulier -->
                     <div data-tab-content="particulier" class="animate-fadeIn">
                         <p class="text-lg text-gray-600 mb-8 max-w-2xl">
-                            Prenez le contrôle de vos finances personnelles avec une suite d'outils <span class="font-semibold text-primary">intelligents et intuitifs</span>, conçus pour s'adapter à votre vie quotidienne.
+                            Gérez vos finances personnelles avec des outils <span class="font-semibold text-primary">intuitifs et performants</span>, conçus pour simplifier votre quotidien.
                         </p>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <!-- Carte Budgeting -->
+                            <!-- Carte Paiements -->
                             <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-secondary transform transition-all hover:-translate-y-1 hover:shadow-xl">
                                 <div class="flex items-start mb-4">
                                     <div class="bg-primary/10 p-2 rounded-lg mr-4">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
                                         </svg>
                                     </div>
                                     <div>
-                                        <h3 class="text-xl font-bold text-primary mb-2">Budgeting Intelligent</h3>
-                                        <p class="text-gray-600">Créez des budgets qui s'ajustent automatiquement à vos habitudes de dépenses.</p>
+                                        <h3 class="text-xl font-bold text-primary mb-2">Paiements instantanés</h3>
+                                        <p class="text-gray-600">Effectuez et recevez des paiements en quelques secondes.</p>
                                     </div>
-                                </div>
-                                <div class="mt-4 flex items-center text-sm text-primary font-medium">
-                                    <span>Découvrir</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                                    </svg>
                                 </div>
                             </div>
 
-                            <!-- Carte Alertes -->
+                            <!-- Carte Budget -->
                             <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-secondary transform transition-all hover:-translate-y-1 hover:shadow-xl">
                                 <div class="flex items-start mb-4">
                                     <div class="bg-primary/10 p-2 rounded-lg mr-4">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
                                     </div>
                                     <div>
-                                        <h3 class="text-xl font-bold text-primary mb-2">Alertes en Temps Réel</h3>
-                                        <p class="text-gray-600">Recevez des notifications quand vos dépenses approchent des limites définies.</p>
+                                        <h3 class="text-xl font-bold text-primary mb-2">Suivi budgétaire</h3>
+                                        <p class="text-gray-600">Visualisez vos dépenses et revenus en temps réel.</p>
                                     </div>
-                                </div>
-                                <div class="mt-4 flex items-center text-sm text-primary font-medium">
-                                    <span>Découvrir</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                                    </svg>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Section Entreprise - Design Expert -->
+                    <!-- Section Entreprise -->
                     <div data-tab-content="entreprise" class="hidden animate-fadeIn">
                         <p class="text-lg text-gray-600 mb-8 max-w-2xl">
-                            Optimisez la <span class="font-semibold text-primary">gestion financière de votre entreprise</span> avec des solutions professionnelles complètes et évolutives.
+                            Optimisez la <span class="font-semibold text-primary">gestion de votre entreprise</span> avec des solutions professionnelles complètes.
                         </p>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <!-- Carte Gestion d'équipe -->
+                            <!-- Carte Gestion de caisse -->
                             <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-secondary transform transition-all hover:-translate-y-1 hover:shadow-xl">
                                 <div class="flex items-start mb-4">
                                     <div class="bg-primary/10 p-2 rounded-lg mr-4">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                                         </svg>
                                     </div>
                                     <div>
-                                        <h3 class="text-xl font-bold text-primary mb-2">Gestion d'Équipe</h3>
-                                        <p class="text-gray-600">Attribuez des rôles et des budgets spécifiques à chaque membre de votre équipe.</p>
+                                        <h3 class="text-xl font-bold text-primary mb-2">Caisse intelligente</h3>
+                                        <p class="text-gray-600">Gérez vos ventes, stocks et employés en un seul endroit.</p>
                                     </div>
-                                </div>
-                                <div class="mt-4 flex items-center text-sm text-primary font-medium">
-                                    <span>Découvrir</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                                    </svg>
                                 </div>
                             </div>
 
-                            <!-- Carte Rapports Avancés -->
+                            <!-- Carte Rapports -->
                             <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-secondary transform transition-all hover:-translate-y-1 hover:shadow-xl">
                                 <div class="flex items-start mb-4">
                                     <div class="bg-primary/10 p-2 rounded-lg mr-4">
@@ -137,20 +108,13 @@ import Dashboard from '../assets/icons/dashboard.png';
                                         </svg>
                                     </div>
                                     <div>
-                                        <h3 class="text-xl font-bold text-primary mb-2">Rapports Avancés</h3>
-                                        <p class="text-gray-600">Générez des analyses détaillées et des rapports personnalisés pour chaque département.</p>
+                                        <h3 class="text-xl font-bold text-primary mb-2">Analyses commerciales</h3>
+                                        <p class="text-gray-600">Obtenez des insights pour développer votre activité.</p>
                                     </div>
-                                </div>
-                                <div class="mt-4 flex items-center text-sm text-primary font-medium">
-                                    <span>Découvrir</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                                    </svg>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
             
@@ -252,77 +216,123 @@ import Dashboard from '../assets/icons/dashboard.png';
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-   
+    </section>
     
     <!-- Section fonctionnalités -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#00377d] mb-4">Des outils conçus pour vous</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-[#00377d] mb-4">Fonctionnalités clés</h2>
                 <p class="text-lg text-gray-600">
-                    Découvrez comment mPulse transforme la gestion de budget en expérience intuitive et puissante.
+                    Découvrez comment mPulse transforme la gestion commerciale en expérience intuitive et performante.
                 </p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <FeatureCard 
-                    title="Suivi en temps réel"
-                    description="Visualisez vos flux financiers instantanément avec nos graphiques interactifs."
-                    icon="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                    image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                />
-                <FeatureCard 
-                    title="Planification intelligente"
-                    description="Créez des budgets personnalisés qui s'adaptent à votre style de vie."
-                    icon="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-                    image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                />
-                <FeatureCard 
-                    title="Synchronisation bancaire"
-                    description="Connectez vos comptes pour une vue unifiée de vos finances."
-                    icon="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    image={Dashboard.src}
-                />
+                <!-- Carte 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transform transition-all hover:shadow-xl">
+                    <img src= {Performance.src}
+                         alt="Gestion de caisse" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-primary/10 p-2 rounded-lg mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-primary">Caisse intelligente</h3>
+                        </div>
+                        <p class="text-gray-600">Gérez vos ventes en temps réel avec une interface simple et efficace, adaptée à tous les types de commerce.</p>
+                    </div>
+                </div>
+                
+                <!-- Carte 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transform transition-all hover:shadow-xl">
+                    <img src= {Stock.src}
+                         alt="Gestion de stock" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-primary/10 p-2 rounded-lg mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-primary">Gestion de stock</h3>
+                        </div>
+                        <p class="text-gray-600">Suivez vos entrées et sorties de produits, avec alertes automatiques pour les seuils critiques.</p>
+                    </div>
+                </div>
+                
+                <!-- Carte 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transform transition-all hover:shadow-xl">
+                    <img src= {Dashboard.src} 
+                         alt="Analytique" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-primary/10 p-2 rounded-lg mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-primary">Tableau de bord</h3>
+                        </div>
+                        <p class="text-gray-600">Analysez vos performances avec des graphiques clairs et des indicateurs personnalisables.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
     
-    <!-- Section témoignages -->
-    <section class="py-20 bg-[#00377d] text-white">
+    <!-- Section Chiffres clés -->
+    <section class="py-20 bg-gradient-to-br from-[#00377d] to-[#0066cc] text-white">
         <div class="container mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Ils utilisent mPulse</h2>
-                <p class="text-lg opacity-80">
-                    Découvrez ce que nos utilisateurs disent de leur expérience.
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">mPulse en chiffres</h2>
+                <p class="text-lg opacity-90">
+                    La solution préférée des commerçants et entrepreneurs au Sénégal
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <Testimonial 
-                    quote="mPulse a révolutionné ma gestion financière. Enfin une application qui s'adapte à mes besoins !"
-                    author="Marie D."
-                    role="Freelance"
-                    avatar="https://randomuser.me/api/portraits/women/44.jpg"
-                />
-                <Testimonial 
-                    quote="La synchronisation automatique avec nos comptes a fait gagner un temps précieux à toute l'équipe."
-                    author="Thomas L."
-                    role="CEO Startup"
-                    avatar="https://randomuser.me/api/portraits/men/32.jpg"
-                />
-                <Testimonial 
-                    quote="Les rapports personnalisés m'ont permis d'identifier des économies insoupçonnées."
-                    author="Sophie T."
-                    role="Responsable financier"
-                    avatar="https://randomuser.me/api/portraits/women/68.jpg"
-                />
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- Chiffre 1 -->
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold mb-3">10+</div>
+                    <div class="text-lg opacity-90">Utilisateurs actifs</div>
+                </div>
+                
+                <!-- Chiffre 2 -->
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold mb-3">500K+</div>
+                    <div class="text-lg opacity-90">FCFA échangés</div>
+                </div>
+                
+                <!-- Chiffre 3 -->
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold mb-3">24/7</div>
+                    <div class="text-lg opacity-90">Disponibilité</div>
+                </div>
+                
+                <!-- Chiffre 4 -->
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold mb-3">95%</div>
+                    <div class="text-lg opacity-90">Satisfaction clients</div>
+                </div>
+            </div>
+            
+            <!-- Bouton CTA -->
+            <div class="text-center mt-16">
+                <a href="#" class="inline-flex items-center px-8 py-4 bg-secondary hover:bg-secondary/90 text-white font-bold rounded-full transition-all transform hover:scale-105">
+                    <span>Démarrer avec mPulse</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
-    
     <!-- Section CTA -->
     <CTA />
 </Layout>

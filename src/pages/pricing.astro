@@ -8,8 +8,8 @@ import CTA from '../components/CTA.astro';
     <section class="py-20 bg-gradient-to-r from-[#00377d] to-[#002a63] text-white">
         <div class="container mx-auto px-6 text-center">
             <h1 class="text-4xl md:text-5xl font-bold mb-6">Des tarifs adaptés à vos besoins</h1>
-            <p class="text-xl max-w-3xl mx-auto">
-                Choisissez l'offre qui correspond à votre utilisation. Essai gratuit de <strong class="underline">90 jours</strong> , sans engagement.
+            <p class="text-xl max-w-4xl mx-auto">
+                Choisissez l'offre qui correspond à votre utilisation. Essai gratuit de <strong class="underline text-secondary">90 jours</strong> , sans engagement.
             </p>
         </div>
     </section>
@@ -17,7 +17,7 @@ import CTA from '../components/CTA.astro';
     <!-- Pricing grid -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <!-- Plan Essentiel -->
                 <div class="bg-white rounded-xl shadow-md overflow-hidden border border-[#f2f5f9]">
                     <div class="px-6 py-8">
@@ -124,58 +124,6 @@ import CTA from '../components/CTA.astro';
                         </ul>
                     </div>
                 </div>
-                
-                <!-- Plan Entreprise -->
-                <!-- <div class="bg-white rounded-xl shadow-md overflow-hidden border border-[#f2f5f9]">
-                    <div class="px-6 py-8">
-                        <h3 class="text-2xl font-bold text-[#00377d] mb-2">Entreprise</h3>
-                        <p class="text-gray-600 mb-6">Solution complète pour les équipes</p>
-                        <div class="mb-6">
-                            <span class="text-4xl font-bold text-[#09090b]">39€</span>
-                            <span class="text-gray-500">/mois</span>
-                        </div>
-                        <a 
-                            href="#" 
-                            class="block w-full px-4 py-3 bg-[#f2f5f9] text-[#00377d] rounded-lg hover:bg-gray-100 text-center font-medium transition-colors"
-                        >
-                            Commencer
-                        </a>
-                    </div>
-                    <div class="border-t border-[#f2f5f9] px-6 py-6 bg-[#fafbfd]">
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#ffd100] mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="text-gray-600">Comptes bancaires illimités</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#ffd100] mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="text-gray-600">Budgets illimités</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#ffd100] mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="text-gray-600">Rapports personnalisés</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#ffd100] mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="text-gray-600">Analyse avancée</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#ffd100] mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="text-gray-600">Support prioritaire</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div> -->
             </div>
             
             <div class="mt-12 text-center">
@@ -201,7 +149,7 @@ import CTA from '../components/CTA.astro';
             </div>
             
             <div class="max-w-3xl mx-auto">
-                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="max-h-[500px] overflow-y-auto rounded-xl shadow-md border border-[#e5e7eb] bg-white">
                     {[
                         { 
                             question: "Puis-je essayer mPulse gratuitement ?", 

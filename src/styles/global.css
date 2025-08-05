@@ -47,13 +47,11 @@ body.menu-open {
     height: 2px;
     background-color: var(--color-secondary);
 }
-/* Dans votre global.css */
 .rotate-180 {
     transform: rotate(180deg);
     transition: transform 0.3s ease-in-out;
 }
 
-/* Animation d'ouverture/fermeture de la FAQ */
 .faq-content {
     max-height: 0;
     overflow: hidden;
@@ -63,7 +61,7 @@ body.menu-open {
 }
 
 .faq-toggle[aria-expanded="true"] + .faq-content {
-    max-height: 500px; /* Ajustez selon la taille de votre contenu */
+    max-height: 500px;
     opacity: 1;
 }
 .animate-fadeIn {

@@ -3,12 +3,13 @@
 import Logo from '../assets/icons/logo.jpg';
 const navItems = [
     { name: "Fonctionnalités", path: "/features" },
-    { name: "Solutions", path: "/solutions/particuliers" },
+    { name: "Solutions", path: "/solution" },
     { name: "Tarifs", path: "/pricing" },
     { name: "À propos", path: "/about" },
 ];
 const currentUrl = Astro.url.pathname;
 ---
+
 <header class="bg-primary text-white shadow-sm sticky top-0 z-50">
     <div class="container mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
@@ -17,17 +18,17 @@ const currentUrl = Astro.url.pathname;
                 <h1 class="text-2xl font-bold text-white">m<span class="text-secondary">Pulse</span></h1>
             </a>
             
-            <!-- Menu desktop - Couleur forcée avec !important -->
+            <!-- Menu desktop -->
             <nav class="hidden md:flex items-center space-x-8">
                 {navItems.map((item) => {
                     const isActive = currentUrl.startsWith(item.path);
                     return (
                         <a 
                             href={item.path}
-                            class={`font-bold font-serif transition-colors ${
+                            class={`font-medium transition-colors duration-200 ${
                                 isActive 
-                                    ? 'text-secondary font-semibold border-b-2 border-secondary' 
-                                    : 'text-white hover:text-secondary'
+                                    ? 'text-secondary border-b-2 border-secondary pb-1' 
+                                    : 'text-white hover:text-secondary/80'
                             }`}
                         >
                             {item.name}
@@ -36,70 +37,68 @@ const currentUrl = Astro.url.pathname;
                 })}
             </nav>
 
-            <div id="mobile-menu" class="hidden md:hidden pt-4 pb-2">
-                <div class="flex flex-col space-y-3">
-                    {navItems.map((item) => {
-                        const isActive = currentUrl.startsWith(item.path);
-                        return (
-                            <a 
-                                href={item.path}
-                                class={`px-4 py-2 rounded-lg transition-colors ${
-                                    isActive
-                                        ? 'bg-secondary/20 text-secondary font-semibold'
-                                        : 'text-white hover:bg-white/10'
-                                }`}
-                            >
-                                {item.name}
-                            </a>
-                        );
-                    })}
-                </div>
-            </div>
-            
             <div class="flex items-center space-x-4">
-                <a 
-                    href="/contact" 
-                    class="hidden md:block px-6 py-2 border border-secondary text-secondary rounded-full hover:bg-secondary hover:text-dark transition-colors font-medium front-serif"
-                >
-                    Contactez-nous
-                </a>
-                <a 
-                    href="#" 
-                    class="hidden lg:block px-6 py-2 bg-primary text-white rounded-full hover:bg-[#002a63] transition-colors font-medium font-serif"
-                >
-                    Essai gratuit
-                </a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a 
+                        href="/contact" 
+                        class="px-4 py-2 border border-secondary text-secondary rounded-full hover:bg-secondary hover:text-white transition-colors font-medium"
+                    >
+                        Contactez-nous
+                    </a>
+                    <a href="#" class="px-4 py-2  text-white rounded-full hover:bg-secondary/90 transition-colors font-medium">
+                        <!-- Essai gratuit  -->
+                         +221 76 723 88 88
+                    </a>
+                </div>
                 
-                <!-- Bouton burger en blanc -->
-                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <!-- Bouton burger -->
+                <button 
+                    id="mobile-menu-button" 
+                    class="md:hidden text-white focus:outline-none"
+                    aria-label="Menu mobile"
+                    aria-expanded="false"
+                >
+                    <svg id="menu-open-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg id="menu-close-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
         </div>
         
-        <!-- Menu mobile - Couleurs adaptées -->
-        <div id="mobile-menu" class="hidden md:hidden pt-4 pb-2 transition-opacity duration-300 ease-in-out transform">
-            <div class="flex flex-col space-y-3">
-                {navItems.map((item) => (
-                    <a 
-                        href={item.path} 
-                        class="block px-4 py-2 text-white hover:bg-white/10 rounded-lg transition-colors"
-                    >
-                        {item.name}
-                    </a>
-                ))}
-                <div class="pt-2 border-t border-white/20">
+        <!-- Menu mobile -->
+        <div 
+            id="mobile-menu" 
+            class="hidden md:hidden h-0 overflow-hidden transition-all duration-300 ease-in-out"
+        >
+            <div class="flex flex-col space-y-3 pt-4 pb-6">
+                {navItems.map((item) => {
+                    const isActive = currentUrl.startsWith(item.path);
+                    return (
+                        <a 
+                            href={item.path} 
+                            class={`px-4 py-3 rounded-lg transition-colors ${
+                                isActive
+                                    ? 'bg-secondary/20 text-secondary font-semibold'
+                                    : 'text-white hover:bg-white/10'
+                            }`}
+                        >
+                            {item.name}
+                        </a>
+                    );
+                })}
+                <div class="pt-4 mt-2 border-t border-white/20 space-y-3">
                     <a 
                         href="/contact" 
-                        class="block px-4 py-2 text-secondary font-medium"
+                        class="block px-4 py-3 text-center border border-secondary text-secondary rounded-lg hover:bg-secondary hover:text-white transition-colors"
                     >
                         Contactez-nous
                     </a>
                     <a 
                         href="#" 
-                        class="block px-4 py-2 bg-primary text-white rounded-lg text-center mt-2"
+                        class="block px-4 py-3 text-center bg-secondary text-white rounded-lg hover:bg-secondary/90 transition-colors"
                     >
                         Essai gratuit
                     </a>
@@ -108,3 +107,107 @@ const currentUrl = Astro.url.pathname;
         </div>
     </div>
 </header>
+
+<script>
+    // Gestion du menu mobile
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuOpenIcon = document.getElementById('menu-open-icon');
+        const menuCloseIcon = document.getElementById('menu-close-icon');
+        
+        if (menuButton) {
+            menuButton.addEventListener('click', () => {
+                const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+                
+                // Basculer l'état
+                menuButton.setAttribute('aria-expanded', (!isExpanded).toString());
+                
+                // Animation du menu
+                if (isExpanded) {
+                    if (mobileMenu) {
+                        mobileMenu.classList.add('h-0');
+                        mobileMenu.classList.remove('h-auto', 'py-2');
+                    }
+                    if (menuOpenIcon) menuOpenIcon.classList.remove('hidden');
+                    if (menuCloseIcon) menuCloseIcon.classList.add('hidden');
+                    document.body.classList.remove('overflow-hidden');
+                } else {
+                    if (mobileMenu) {
+                        mobileMenu.classList.remove('h-0');
+                        mobileMenu.classList.add('h-auto', 'py-2');
+                    }
+                    if (menuOpenIcon) menuOpenIcon.classList.add('hidden');
+                    if (menuCloseIcon) menuCloseIcon.classList.remove('hidden');
+                    document.body.classList.add('overflow-hidden');
+                }
+            });
+        }
+        
+        // Fermer le menu quand on clique sur un lien
+        if (mobileMenu) {
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('h-0');
+                    mobileMenu.classList.remove('h-auto', 'py-2');
+                    if (menuButton) {
+                        menuButton.setAttribute('aria-expanded', 'false');
+                    }
+                    if (menuOpenIcon) menuOpenIcon.classList.remove('hidden');
+                    if (menuCloseIcon) menuCloseIcon.classList.add('hidden');
+                    document.body.classList.remove('overflow-hidden');
+                });
+            });
+        }
+    });
+</script>
+
+<style>
+    /* Animation fluide pour le menu mobile */
+    #mobile-menu {
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Empêche le scroll quand le menu est ouvert */
+    body.overflow-hidden {
+        overflow: hidden;
+    }
+    
+    /* Amélioration des transitions */
+    a, button {
+        transition: all 0.2s ease-in-out;
+    }
+    
+    /* Style actif pour les liens desktop */
+    .nav-link.active {
+        position: relative;
+    }
+    
+    .nav-link.active::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: theme('colors.secondary');
+        transform: scaleX(1);
+        transition: transform 0.3s ease;
+    }
+    
+    .nav-link:not(.active)::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: theme('colors.secondary');
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+        transform: scaleX(1);
+    }
+</style>
