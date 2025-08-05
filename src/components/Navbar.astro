@@ -1,5 +1,6 @@
 ---
 // src/components/Navbar.astro
+import Logo from '../assets/icons/logo.jpg';
 const navItems = [
     { name: "Fonctionnalités", path: "/features" },
     { name: "Solutions", path: "/solutions/particuliers" },
@@ -12,7 +13,7 @@ const currentUrl = Astro.url.pathname;
     <div class="container mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
             <a href="/" class="flex items-center space-x-2">
-                <!-- Logo en blanc pour meilleur contraste -->
+                <img src={Logo.src} alt="mPulse Logo" class="h-8 w-8 rounded-full" />
                 <h1 class="text-2xl font-bold text-white">m<span class="text-secondary">Pulse</span></h1>
             </a>
             
@@ -23,7 +24,7 @@ const currentUrl = Astro.url.pathname;
                     return (
                         <a 
                             href={item.path}
-                            class={`font-medium transition-colors ${
+                            class={`font-bold font-serif transition-colors ${
                                 isActive 
                                     ? 'text-secondary font-semibold border-b-2 border-secondary' 
                                     : 'text-white hover:text-secondary'
@@ -58,13 +59,13 @@ const currentUrl = Astro.url.pathname;
             <div class="flex items-center space-x-4">
                 <a 
                     href="/contact" 
-                    class="hidden md:block px-6 py-2 border border-secondary text-secondary rounded-full hover:bg-secondary hover:text-dark transition-colors font-medium"
+                    class="hidden md:block px-6 py-2 border border-secondary text-secondary rounded-full hover:bg-secondary hover:text-dark transition-colors font-medium front-serif"
                 >
                     Contactez-nous
                 </a>
                 <a 
                     href="#" 
-                    class="hidden lg:block px-6 py-2 bg-primary text-white rounded-full hover:bg-[#002a63] transition-colors font-medium"
+                    class="hidden lg:block px-6 py-2 bg-primary text-white rounded-full hover:bg-[#002a63] transition-colors font-medium font-serif"
                 >
                     Essai gratuit
                 </a>

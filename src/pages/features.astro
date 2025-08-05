@@ -3,6 +3,15 @@
 import Layout from '../layouts/Layout.astro';
 import FeatureCard from '../components/FeatureCard.astro';
 import CTA from '../components/CTA.astro';
+import Client from '../assets/icons/bussiness.jpg';
+import Sale from '../assets/icons/client.jpg';
+import Stock from '../assets/icons/store.jpg';
+import Dashboard from '../assets/icons/dashboardF.png';
+import Transaction from '../assets/icons/transaction.png';
+import Performance from '../assets/icons/performance.jpg';
+import Fournisseur from '../assets/icons/stock.jpg';
+import Money from '../assets/icons/money.jpg';
+import Employee from '../assets/icons/staff.jpg';
 ---
 <Layout title="Fonctionnalités">
     <!-- Hero -->
@@ -16,48 +25,100 @@ import CTA from '../components/CTA.astro';
     </section>
     
     <!-- Features grid -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                <FeatureCard 
-                    title="Suivi en temps réel"
-                    description="Visualisez vos flux financiers instantanément avec nos graphiques interactifs."
-                    icon="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                    image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                />
-                <FeatureCard 
-                    title="Planification intelligente"
-                    description="Créez des budgets personnalisés qui s'adaptent à votre style de vie."
-                    icon="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-                    image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                />
-                <FeatureCard 
-                    title="Synchronisation bancaire"
-                    description="Connectez vos comptes pour une vue unifiée de vos finances."
-                    icon="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    image="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                />
-                <FeatureCard 
-                    title="Alertes personnalisées"
-                    description="Recevez des notifications pour les dépenses inhabituelles."
-                    icon="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-                    image="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                />
-                <FeatureCard 
-                    title="Rapports détaillés"
-                    description="Générez des rapports PDF personnalisés pour partager avec votre comptable."
-                    icon="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                    image="https://images.unsplash.com/photo-1444653614773-995cb1ef9efa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                />
-                <FeatureCard 
-                    title="Objectifs d'épargne"
-                    description="Définissez et suivez vos objectifs financiers à long terme."
-                    icon="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                    image="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                />
-            </div>
+    <!-- Section Fonctionnalités - Version Optimisée -->
+<section class="py-20 bg-gradient-to-b from-white to-[#f8fafc]">
+    <div class="container mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-3xl font-bold text-[#00377d] mb-4">Toutes les fonctionnalités dont vous avez besoin</h2>
+            <p class="text-lg text-gray-600">
+                Une solution complète pour gérer efficacement votre activité commerciale
+            </p>
         </div>
-    </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Gestion des ventes -->
+            <FeatureCard 
+                title="Gestion des ventes"
+                description="Enregistrez et suivez toutes vos transactions commerciales en temps réel."
+                icon="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                image={Sale.src}
+                badgeColor="bg-[#ffd100]"
+            />
+
+            <!-- Suivi des encaissements -->
+            <FeatureCard 
+                title="Suivi des encaissements"
+                description="Suivez tous vos paiements et encaissements avec historique détaillé."
+                icon="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
+                image= {Money.src}
+                badgeColor="bg-green-500"
+            />
+
+            <!-- Gestion du stock -->
+            <FeatureCard 
+                title="Gestion du stock"
+                description="Contrôlez vos entrées/sorties et recevez des alertes de seuil."
+                icon="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                image ={Stock.src}
+                badgeColor="bg-blue-500"
+            />
+
+            <!-- Suivi des clients -->
+            <FeatureCard 
+                title="Suivi des clients"
+                description="Gérez votre relation client avec historique des interactions."
+                icon="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                image= {Client.src}
+                badgeColor="bg-purple-500"
+            />
+
+            <!-- Gestion des fournisseurs -->
+            <FeatureCard 
+                title="Gestion des fournisseurs"
+                description="Centralisez vos relations avec les fournisseurs et les commandes."
+                icon="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                image= {Fournisseur.src}
+                badgeColor="bg-orange-500"
+            />
+
+            <!-- Gestion des employés -->
+            <FeatureCard 
+                title="Gestion des employés"
+                description="Gérez les accès et rôles de votre équipe avec différents niveaux de permission."
+                icon="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                image= {Employee.src}
+                badgeColor="bg-red-500"
+            />
+
+            <!-- Historique des transactions -->
+            <FeatureCard 
+                title="Historique des transactions"
+                description="Consultez l'historique complet de toutes vos opérations financières."
+                icon="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                image= {Transaction.src}
+                badgeColor="bg-indigo-500"
+            />
+
+            <!-- Tableau de bord analytique -->
+            <FeatureCard 
+                title="Tableau de bord"
+                description="Vue d'ensemble de votre activité avec indicateurs clés en temps réel."
+                icon="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                image= {Dashboard.src}e
+                badgeColor="bg-pink-500"
+            />
+
+            <!-- Rapports de performance -->
+            <FeatureCard 
+                title="Rapports de performance"
+                description="Générez des rapports détaillés pour analyser vos résultats."
+                icon="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                image= {Performance.src}
+                badgeColor="bg-teal-500"
+            />
+        </div>
+    </div>
+</section>
     
     <!-- Comparaison -->
     <section class="py-20 bg-[#f2f5f9]">
