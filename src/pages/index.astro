@@ -8,6 +8,11 @@ import CTA from '../components/CTA.astro';
 import Dashboard from '../assets/icons/dashboardF.png';
 import Stock from '../assets/icons/stock.jpg';
 import Performance from '../assets/icons/performance.jpg';
+import ScreenDashboard from '../assets/app/dashboard.jpg';
+import ScreenAutre from '../assets/app/autre.jpg';
+import ScreenCaisse from '../assets/app/caisse.jpg';
+import ScreenDepense from '../assets/app/depense.jpg';
+import ScreenEcommerce from '../assets/app/ecommerce1.jpg';
 ---
 <Layout title="Accueil">
     <Hero />
@@ -123,51 +128,49 @@ import Performance from '../assets/icons/performance.jpg';
                 <div class="relative mx-auto w-full max-w-xs">
                     <!-- Bordure jaune -->
                     <div class="absolute inset-0 rounded-[40px] border-[14px] border-secondary shadow-2xl transform rotate-2"></div>
-                    
-                    <!-- Carousel Tailwind CSS -->
                     <div class="relative rounded-[28px] overflow-hidden bg-gray-800 aspect-[9/19]">
                         <!-- Slides -->
                         <div class="carousel relative h-full w-full">
-                            <!-- Slide Accueil -->
+                            <!-- Slide Dasboard -->
                             <div class="carousel-item absolute inset-0 w-full h-full" data-slide="accueil">
                                 <img 
-                                    src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                    src= {ScreenDashboard.src}
                                     alt="Capture accueil" 
                                     class="w-full h-full object-cover"
                                 />
-                                <!-- Widget solde -->
-                                <div class="absolute bottom-20 left-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-md">
-                                    <div class="flex justify-between items-center mb-2">
-                                        <span class="text-xs font-medium text-gray-500">SOLDE DISPONIBLE</span>
-                                        <span class="text-xs text-gray-500">MAJ: <span id="update-time"></span></span>
-                                    </div>
-                                    <div class="text-2xl font-bold text-primary">99 244 789 FCFA</div>
-                                </div>
                             </div>
                             
-                            <!-- Slide Paiements -->
+                            <!-- Slide Caisse -->
                             <div class="carousel-item absolute inset-0 w-full h-full hidden" data-slide="paiements">
                                 <img 
-                                    src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-                                    alt="Capture paiements" 
+                                    src= {ScreenCaisse.src}
+                                    alt="Capture caisse" 
                                     class="w-full h-full object-cover"
                                 />
                             </div>
                             
-                            <!-- Slide Historique -->
-                            <div class="carousel-item absolute inset-0 w-full h-full hidden" data-slide="historique">
+                            <!-- Slide Depenses -->
+                            <div class="carousel-item absolute inset-0 w-full h-full hidden" data-slide="depenses">
                                 <img 
-                                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-                                    alt="Capture historique" 
+                                    src= {ScreenDepense.src}
+                                    alt="Capture Depenses" 
+                                    class="w-full h-full object-cover"
+                                />
+                            </div>
+                             <!-- Slide Ecommerce -->
+                             <div class="carousel-item absolute inset-0 w-full h-full hidden" data-slide="ecommerce">
+                                <img 
+                                    src= {ScreenEcommerce.src}
+                                    alt="Capture Ecommerce" 
                                     class="w-full h-full object-cover"
                                 />
                             </div>
                             
-                            <!-- Slide Profil -->
-                            <div class="carousel-item absolute inset-0 w-full h-full hidden" data-slide="profil">
+                            <!-- Slide Autre -->
+                            <div class="carousel-item absolute inset-0 w-full h-full hidden" data-slide="Autre">
                                 <img 
-                                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-                                    alt="Capture profil" 
+                                    src= {ScreenAutre.src}
+                                    alt="Capture autre" 
                                     class="w-full h-full object-cover"
                                 />
                             </div>
@@ -176,42 +179,51 @@ import Performance from '../assets/icons/performance.jpg';
                 </div>
                 
                 <!-- Navigation inférieure -->
-                <div class="mt-8 flex justify-center gap-1" id="mobile-nav">
+                <div class="mt-8 flex justify-center" id="mobile-nav">
                     <button 
                         data-slide-target="accueil"
-                        class="flex flex-col items-center px-4 py-2 rounded-full text-sm font-medium bg-primary text-white"
+                        class="flex flex-col items-center px-2 py-2 rounded-full text-sm font-medium bg-primary text-white"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                         </svg>
-                        <span class="mt-1">Accueil</span>
+                        <span class="mt-1">Dashboard</span>
                     </button>
                     <button 
                         data-slide-target="paiements"
-                        class="flex flex-col items-center px-4 py-2 rounded-full text-sm font-medium text-gray-600 hover:text-primary"
+                        class="flex flex-col items-center px-2 py-2 rounded-full text-sm font-medium text-gray-600 hover:text-primary"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
-                        <span class="mt-1">Paiements</span>
+                        <span class="mt-1">Caisse</span>
                     </button>
                     <button 
-                        data-slide-target="historique"
-                        class="flex flex-col items-center px-4 py-2 rounded-full text-sm font-medium text-gray-600 hover:text-primary"
+                        data-slide-target="depenses"
+                        class="flex flex-col items-center px-2 py-2 rounded-full text-sm font-medium text-gray-600 hover:text-primary"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 11h16M4 15h16M4 19h16" />
                         </svg>
-                        <span class="mt-1">Historique</span>
+                        <span class="mt-1">Depenses</span>
                     </button>
                     <button 
-                        data-slide-target="profil"
-                        class="flex flex-col items-center px-4 py-2 rounded-full text-sm font-medium text-gray-600 hover:text-primary"
+                        data-slide-target="ecommerce"
+                        class="flex flex-col items-center px-2 py-2 rounded-full text-sm font-medium text-gray-600 hover:text-primary"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m5-9v9m4-9v9m1-16h-6" />
+                        </svg>
+                        <span class="mt-1">Ecommerce</span>
+                    </button>
+                    <button 
+                        data-slide-target="Autre"
+                        class="flex flex-col items-center px-2 py-2 rounded-full text-sm font-medium text-gray-600 hover:text-primary"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                         </svg>
-                        <span class="mt-1">Profil</span>
+                        <span class="mt-1">Autre</span>
                     </button>
                 </div>
             </div>

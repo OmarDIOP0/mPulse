@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 const { title } = Astro.props;
+import Logo from '../assets/icons/logo.jpg';
 ---
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
@@ -12,6 +13,9 @@ const { title } = Astro.props;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title} | mPulse - Gestion de budget intelligente</title>
+    <meta name="description" content="mPulse est une application de gestion de budget qui simplifie la gestion financière pour les entreprises et les particuliers. Découvrez nos fonctionnalités avancées." />
+    <link rel="icon" href={Logo.src} type="image/x-icon"/>
+
     
     <!-- Importations CSS critiques -->
     <style>
