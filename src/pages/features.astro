@@ -24,140 +24,168 @@ import Employee from '../assets/icons/staff.jpg';
         </div>
     </section>
     
-    <!-- Features grid -->
     <!-- Section Fonctionnalités - Version Optimisée -->
-<section class="py-20 bg-gradient-to-b from-white to-[#f8fafc]">
-    <div class="container mx-auto px-6">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="text-3xl md:text-3xl font-bold text-[#00377d] mb-4">Toutes les fonctionnalités dont vous avez besoin</h2>
-            <p class="text-lg text-gray-600">
-                Une solution complète pour gérer efficacement votre activité commerciale
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Gestion des ventes -->
-            <FeatureCard 
-                title="Gestion des ventes"
-                description="Enregistrez et suivez toutes vos transactions commerciales en temps réel."
-                icon="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-                image={Sale.src}
-                badgeColor="bg-[#ffd100]"
-            />
-
-            <!-- Suivi des encaissements -->
-            <FeatureCard 
-                title="Suivi des encaissements"
-                description="Suivez tous vos paiements et encaissements avec historique détaillé."
-                icon="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
-                image= {Money.src}
-                badgeColor="bg-green-500"
-            />
-
-            <!-- Gestion du stock -->
-            <FeatureCard 
-                title="Gestion du stock"
-                description="Contrôlez vos entrées/sorties et recevez des alertes de seuil."
-                icon="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
-                image ={Stock.src}
-                badgeColor="bg-blue-500"
-            />
-
-            <!-- Suivi des clients -->
-            <FeatureCard 
-                title="Suivi des clients"
-                description="Gérez votre relation client avec historique des interactions."
-                icon="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
-                image= {Client.src}
-                badgeColor="bg-purple-500"
-            />
-
-            <!-- Gestion des fournisseurs -->
-            <FeatureCard 
-                title="Gestion des fournisseurs"
-                description="Centralisez vos relations avec les fournisseurs et les commandes."
-                icon="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-                image= {Fournisseur.src}
-                badgeColor="bg-orange-500"
-            />
-
-            <!-- Gestion des employés -->
-            <FeatureCard 
-                title="Gestion des employés"
-                description="Gérez les accès et rôles de votre équipe avec différents niveaux de permission."
-                icon="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                image= {Employee.src}
-                badgeColor="bg-red-500"
-            />
-
-            <!-- Historique des transactions -->
-            <FeatureCard 
-                title="Historique des transactions"
-                description="Consultez l'historique complet de toutes vos opérations financières."
-                icon="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                image= {Transaction.src}
-                badgeColor="bg-indigo-500"
-            />
-
-            <!-- Tableau de bord analytique -->
-            <FeatureCard 
-                title="Tableau de bord"
-                description="Vue d'ensemble de votre activité avec indicateurs clés en temps réel."
-                icon="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                image= {Dashboard.src}e
-                badgeColor="bg-pink-500"
-            />
-
-            <!-- Rapports de performance -->
-            <FeatureCard 
-                title="Rapports de performance"
-                description="Générez des rapports détaillés pour analyser vos résultats."
-                icon="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                image= {Performance.src}
-                badgeColor="bg-teal-500"
-            />
-        </div>
-    </div>
-</section>
-    
-    <!-- Comparaison -->
-    <section class="py-20 bg-[#f2f5f9]">
+    <section class="py-20 bg-gradient-to-b from-white to-[#f8fafc]">
         <div class="container mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#00377d] mb-4">Pourquoi choisir mPulse ?</h2>
+                <h2 class="text-3xl md:text-3xl font-bold text-[#00377d] mb-4">Toutes les fonctionnalités dont vous avez besoin</h2>
                 <p class="text-lg text-gray-600">
-                    Comparé aux solutions traditionnelles, mPulse offre une approche moderne de la gestion budgétaire.
+                    Une solution complète pour gérer efficacement votre activité commerciale
                 </p>
             </div>
-            
-            <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                <table class="min-w-full divide-y divide-[#f2f5f9]">
-                    <thead class="bg-[#00377d] text-white">
-                        <tr>
-                            <th scope="col" class="px-6 py-4 text-left text-sm font-medium uppercase tracking-wider">Fonctionnalité</th>
-                            <th scope="col" class="px-6 py-4 text-center text-sm font-medium uppercase tracking-wider">mPulse</th>
-                            <th scope="col" class="px-6 py-4 text-center text-sm font-medium uppercase tracking-wider">Solutions classiques</th>
-                        </tr>
-                    </thead>
-                    <tbody class="bg-white divide-y divide-[#f2f5f9]">
-                        {[
-                            { feature: "Synchronisation automatique", mPulse: "✓", others: "Partielle" },
-                            { feature: "Analyse intelligente", mPulse: "✓", others: "✗" },
-                            { feature: "Gestions Clients / Depenses", mPulse: "✓", others: "Limitées" },
-                            { feature: "Rapports", mPulse: "✓", others: "✓" },
-                            { feature: "Support 24/7", mPulse: "✓", others: "Limité" },
-                        ].map((row) => (
-                            <tr>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-[#09090b]">{row.feature}</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-[#00377d] font-bold">{row.mPulse}</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-500">{row.others}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Gestion des ventes -->
+                <FeatureCard 
+                    index={0}
+                    title="Gestion des ventes"
+                    description="Enregistrez et suivez toutes vos transactions commerciales en temps réel."
+                    icon="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                    image={Sale.src}
+                    badgeColor="bg-[#ffd100]"
+                />
+
+                <!-- Suivi des encaissements -->
+                <FeatureCard 
+                    index={1}
+                    title="Suivi des encaissements"
+                    description="Suivez tous vos paiements et encaissements avec historique détaillé."
+                    icon="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
+                    image= {Money.src}
+                    badgeColor="bg-green-500"
+                />
+
+                <!-- Gestion du stock -->
+                <FeatureCard 
+                    index={2}
+                    title="Gestion du stock"
+                    description="Contrôlez vos entrées/sorties et recevez des alertes de seuil."
+                    icon="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                    image ={Stock.src}
+                    badgeColor="bg-blue-500"
+                />
+
+                <!-- Suivi des clients -->
+                <FeatureCard 
+                    index={3}
+                    title="Suivi des clients"
+                    description="Gérez votre relation client avec historique des interactions."
+                    icon="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                    image= {Client.src}
+                    badgeColor="bg-purple-500"
+                />
+
+                <!-- Gestion des fournisseurs -->
+                <FeatureCard 
+                    index={4}
+                    title="Gestion des fournisseurs"
+                    description="Centralisez vos relations avec les fournisseurs et les commandes."
+                    icon="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                    image= {Fournisseur.src}
+                    badgeColor="bg-orange-500"
+                />
+
+                <!-- Gestion des employés -->
+                <FeatureCard 
+                    index={5}
+                    title="Gestion des employés"
+                    description="Gérez les accès et rôles de votre équipe avec différents niveaux de permission."
+                    icon="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                    image= {Employee.src}
+                    badgeColor="bg-red-500"
+                />
+
+                <!-- Historique des transactions -->
+                <FeatureCard 
+                    index={6}
+                    title="Historique des transactions"
+                    description="Consultez l'historique complet de toutes vos opérations financières."
+                    icon="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    image= {Transaction.src}
+                    badgeColor="bg-indigo-500"
+                />
+
+                <!-- Tableau de bord analytique -->
+                <FeatureCard 
+                    index={7}
+                    title="Tableau de bord"
+                    description="Vue d'ensemble de votre activité avec indicateurs clés en temps réel."
+                    icon="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    image= {Dashboard.src}e
+                    badgeColor="bg-pink-500"
+                />
+
+                <!-- Rapports de performance -->
+                <FeatureCard 
+                    index={8}
+                    title="Rapports de performance"
+                    description="Générez des rapports détaillés pour analyser vos résultats."
+                    icon="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    image= {Performance.src}
+                    badgeColor="bg-teal-500"
+                />
             </div>
         </div>
     </section>
+    
+    <!-- Comparaison -->
+    <section class="py-12 md:py-20 bg-[#f2f5f9]">
+    <div class="container mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+            <h2 class="text-2xl md:text-4xl font-bold text-[#00377d] mb-3 md:mb-4">Pourquoi choisir mPulse ?</h2>
+            <p class="text-base md:text-lg text-gray-600">
+                Comparé aux solutions traditionnelles, mPulse offre une approche moderne de la gestion budgétaire.
+            </p>
+        </div>
+        
+        <!-- Version Desktop (tableau) -->
+        <div class="hidden md:block bg-white rounded-xl shadow-md overflow-hidden">
+            <table class="min-w-full divide-y divide-[#f2f5f9]">
+                <thead class="bg-[#00377d] text-white">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 text-left text-xs sm:text-sm font-medium uppercase tracking-wider">Fonctionnalité</th>
+                        <th scope="col" class="px-6 py-3 text-center text-xs sm:text-sm font-medium uppercase tracking-wider">mPulse</th>
+                        <th scope="col" class="px-6 py-3 text-center text-xs sm:text-sm font-medium uppercase tracking-wider">Solutions classiques</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-[#f2f5f9]">
+                    {[
+                        { feature: "Synchronisation automatique", mPulse: "✓", others: "Partielle" },
+                        { feature: "Analyse intelligente", mPulse: "✓", others: "✗" },
+                        { feature: "Gestions Clients/Dépenses", mPulse: "✓", others: "Limitées" },
+                        { feature: "Rapports", mPulse: "✓", others: "✓" },
+                        { feature: "Support 24/7", mPulse: "✓", others: "Limité" },
+                    ].map((row) => (
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-normal text-sm font-medium text-[#09090b]">{row.feature}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-[#00377d] font-bold">{row.mPulse}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-500">{row.others}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Version Mobile (cartes) -->
+        <div class="md:hidden space-y-4">
+            {[
+                { feature: "Synchronisation automatique", mPulse: "✓", others: "Partielle" },
+                { feature: "Analyse intelligente", mPulse: "✓", others: "✗" },
+                { feature: "Gestions Clients/Dépenses", mPulse: "✓", others: "Limitées" },
+                { feature: "Rapports", mPulse: "✓", others: "✓" },
+                { feature: "Support 24/7", mPulse: "✓", others: "Limité" },
+            ].map((row) => (
+                <div class="bg-white rounded-lg shadow-sm p-4">
+                    <div class="font-medium text-[#00377d] mb-2">{row.feature}</div>
+                    <div class="flex justify-between text-sm">
+                        <span class="font-bold text-[#00377d]">mPulse: {row.mPulse}</span>
+                        <span class="text-gray-500">Classiques: {row.others}</span>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
     
     <CTA />
 </Layout>

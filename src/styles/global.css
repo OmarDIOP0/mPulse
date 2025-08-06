@@ -52,10 +52,6 @@ body.menu-open {
     animation: fadeIn 0.5s ease-out forwards;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
 form input:focus, form select:focus, form textarea:focus {
     box-shadow: 0 0 0 3px rgba(0, 55, 125, 0.1);
 }
@@ -64,3 +60,227 @@ form input:focus, form select:focus, form textarea:focus {
     backdrop-filter: blur(8px);
 }
 
+/* Animations de base */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes scaleIn {
+  from { 
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Classes d'animation */
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Transitions */
+.card-transition {
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.menu-transition {
+  transition: transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+/* Effets au hover */
+.hover-scale:hover {
+  transform: scale(1.03);
+}
+
+.hover-rotate:hover {
+  transform: rotate(2deg);
+}
+
+/* Éléments spécifiques */
+.nav-link.active {
+  position: relative;
+}
+
+
+/* Inputs */
+input:focus, select:focus, textarea:focus {
+  box-shadow: 0 0 0 3px rgba(0, 55, 125, 0.1);
+  outline: none;
+  transition: box-shadow 0.2s ease;
+}
+
+/* Délais d'animation */
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+/* Utilitaires */
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-1 {
+  opacity: 1;
+}
+
+/* Animation au scroll (pure CSS) */
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-animate {
+    opacity: 0;
+    animation-timeline: view();
+    animation-range: entry 20% cover 30%;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+}
+.mockup-phone {
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.mockup-border {
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  border-width: 10px;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  transform: rotate(1deg);
+}
+
+.mockup-content {
+  border-radius: 22px;
+  aspect-ratio: 9/19;
+}
+
+@media (min-width: 640px) {
+  .mockup-phone {
+    max-width: 320px;
+  }
+  .mockup-border {
+    border-radius: 36px;
+    border-width: 12px;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    transform: rotate(2deg);
+  }
+  .mockup-content {
+    border-radius: 26px;
+  }
+}
+
+@media (min-width: 768px) {
+  .mockup-phone {
+    max-width: 384px;
+  }
+  .mockup-border {
+    border-radius: 40px;
+    border-width: 14px;
+  }
+  .mockup-content {
+    border-radius: 28px;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.feature-card {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation d'apparition en cascade */
+@media (prefers-reduced-motion: no-preference) {
+  .feature-card {
+    animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  
+  .feature-card:nth-child(1) { animation-delay: 0.1s; }
+  .feature-card:nth-child(2) { animation-delay: 0.2s; }
+  .feature-card:nth-child(3) { animation-delay: 0.3s; }
+  .feature-card:nth-child(4) { animation-delay: 0.4s; }
+  .feature-card:nth-child(5) { animation-delay: 0.5s; }
+  .feature-card:nth-child(6) { animation-delay: 0.6s; }
+  .feature-card:nth-child(7) { animation-delay: 0.7s; }
+  .feature-card:nth-child(8) { animation-delay: 0.8s; }
+  .feature-card:nth-child(9) { animation-delay: 0.9s; }
+}
+/* Hover */
+.feature-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  transition: transform 0.3s ease;
+}
+/* Animation de montée */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slideUp {
+    animation: slideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
