@@ -1,6 +1,6 @@
 ---
 // src/components/Navbar.astro
-import Logo from '../assets/icons/logo.jpg';
+import Logo from '../assets/icons/logo4.png';
 const navItems = [
     { name: "Fonctionnalités", path: "/features" },
     { name: "Solutions", path: "/solution" },
@@ -16,8 +16,12 @@ const currentUrl = Astro.url.pathname;
     <div class="container mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
             <a href="/" class="flex items-center space-x-2">
-                <img src={Logo.src} alt="mPulse Logo" class="h-8 w-8 rounded-full" />
-                <h1 class="text-2xl font-bold text-white">m<span class="text-secondary">Pulse</span></h1>
+                <img 
+                    src={Logo.src} 
+                    alt="mPulse Logo" 
+                    class="h-12 w-auto rounded-md border-2"
+                />
+
             </a>
             
             <!-- Menu desktop -->
