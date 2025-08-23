@@ -5,88 +5,7 @@ import CTA from '../components/CTA.astro';
 import AppStore from '../assets/icons/app-store.png';
 import GooglePlay from '../assets/icons/play-store.png';
 ---
-<Layout title="Solution Particuliers">
-    <!-- Hero -->
-<section class="relative py-32 bg-gradient-to-r from-[#00377d] to-[#002a63] text-white overflow-hidden">
-    <div class="absolute inset-0 opacity-20">
-        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center"></div>
-    </div>
-    <div class="container mx-auto px-6 relative z-10">
-        <div class="max-w-3xl">
-           <h1 class="text-4xl md:text-3xl font-bold mb-6">mPulse POS pour Commerçants</h1>
-            <p class="text-xl mb-8">
-                    La solution tout-en-un pour gérer votre boutique, supérette ou PME au Sénégal sans paperasse ni calculs manuels.
-            </p>
-            
-           <div class="grid grid-cols-1 md:grid-cols-4 gap-x-1 mt-12">
-            <div class="flex items-start space-x-1">
-                <div>
-                <p class="text-white/80">Télécharger depuis</p>
-                <a href="https://testflight.apple.com/join/gRS2JbmQ" class="inline-block" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" class="h-10">
-                </a>
-                </div>
-            </div>
-
-            <div class="flex items-start space-x-1">
-                <div>
-                <p class="text-white/80">Télécharger depuis</p>
-                <a href="#" class="inline-block" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" class="h-10">
-                </a>
-                </div>
-            </div>
-            </div>
-        </div>
-    </div>
-</section>
     
-    <!-- Section valeur -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col lg:flex-row items-center gap-12">
-                <div class="lg:w-1/2 order-2 lg:order-1">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#00377d] mb-6">Gestion commerciale simplifiée</h2>
-                    <p class="text-lg text-gray-600 mb-6">
-                        Remplacez définitivement les cahiers de comptes et les calculatrices par une solution numérique adaptée aux réalités du marché sénégalais.
-                    </p>
-                    <ul class="space-y-4">
-                        <li class="flex items-start space-x-4">
-                            <div class="flex-shrink-0 mt-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#ffd100]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                </svg>
-                            </div>
-                            <p class="text-gray-600">Suivi précis des ventes et encaissements en temps réel</p>
-                        </li>
-                        <li class="flex items-start space-x-4">
-                            <div class="flex-shrink-0 mt-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#ffd100]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                </svg>
-                            </div>
-                            <p class="text-gray-600">Gestion des stocks avec alertes de réapprovisionnement</p>
-                        </li>
-                        <li class="flex items-start space-x-4">
-                            <div class="flex-shrink-0 mt-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#ffd100]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                </svg>
-                            </div>
-                            <p class="text-gray-600">Historique complet des transactions clients et fournisseurs</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="lg:w-1/2 order-1 lg:order-2">
-                    <img 
-                        src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                        alt="Tableau de bord mPulse POS pour commerçants" 
-                        class="rounded-xl shadow-xl"
-                    >
-                </div>
-            </div>
-        </div>
-    </section>
     
     <!-- Section fonctionnalités -->
     <section class="py-20 bg-[#f2f5f9]">
@@ -146,7 +65,7 @@ import GooglePlay from '../assets/icons/play-store.png';
     </section>
 
     <!-- Section avantages -->
-    <section class="py-20 bg-white">
+    <section class=" bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-[#00377d] mb-4">Pourquoi choisir mPulse POS ?</h2>
@@ -219,5 +138,3 @@ import GooglePlay from '../assets/icons/play-store.png';
         </div>
     </section>
     
-    <CTA />
-</Layout>

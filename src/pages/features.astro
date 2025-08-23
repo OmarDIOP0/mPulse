@@ -1,8 +1,6 @@
 ---
 // src/pages/features.astro
 import Layout from '../layouts/Layout.astro';
-import FeatureCard from '../components/FeatureCard.astro';
-import CTA from '../components/CTA.astro';
 import Client from '../assets/icons/bussiness.jpg';
 import Sale from '../assets/icons/client.jpg';
 import Stock from '../assets/icons/store.jpg';
@@ -13,179 +11,171 @@ import Fournisseur from '../assets/icons/stock.jpg';
 import Money from '../assets/icons/money.jpg';
 import Employee from '../assets/icons/staff.jpg';
 ---
-<Layout title="Fonctionnalités">
-    <!-- Hero -->
-    <section class="py-20 bg-gradient-to-r from-[#00377d] to-[#002a63] text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">Des fonctionnalités conçues pour vous</h1>
-            <p class="text-xl max-w-3xl mx-auto">
-                Découvrez comment mPulse transforme la gestion de budget en expérience intuitive et puissante.
+
+<!-- Section Fonctionnalités - Version Liste Premium -->
+<section class="relative py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+    <!-- Éléments décoratifs -->
+    <div class="absolute top-10 right-10 w-80 h-80 bg-[#ffd100]/20 rounded-full blur-3xl opacity-50"></div>
+    <div class="absolute bottom-10 left-10 w-96 h-96 bg-[#00377d]/10 rounded-full blur-3xl opacity-30"></div>
+    
+    <div class="container mx-auto px-6 relative z-10">
+        <!-- En-tête -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Une solution tout-en-un</h2>
+            <p class="text-xl text-gray-600">
+                Découvrez toutes les fonctionnalités qui font d'ENCUBE l'outil ultime pour gérer votre commerce
             </p>
         </div>
-    </section>
-    
-    <!-- Section Fonctionnalités - Version Optimisée -->
-    <section class="py-20 bg-gradient-to-b from-white to-[#f8fafc]">
-        <div class="container mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-3xl font-bold text-[#00377d] mb-4">Toutes les fonctionnalités dont vous avez besoin</h2>
-                <p class="text-lg text-gray-600">
-                    Une solution complète pour gérer efficacement votre activité commerciale
-                </p>
-            </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Gestion des ventes -->
-                <FeatureCard 
-                    index={0}
-                    title="Gestion des ventes"
-                    description="Enregistrez et suivez toutes vos transactions commerciales en temps réel."
-                    icon="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-                    image={Sale.src}
-                    badgeColor="bg-[#ffd100]"
-                />
-
-                <!-- Suivi des encaissements -->
-                <FeatureCard 
-                    index={1}
-                    title="Suivi des encaissements"
-                    description="Suivez tous vos paiements et encaissements avec historique détaillé."
-                    icon="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
-                    image= {Money.src}
-                    badgeColor="bg-green-500"
-                />
-
-                <!-- Gestion du stock -->
-                <FeatureCard 
-                    index={2}
-                    title="Gestion du stock"
-                    description="Contrôlez vos entrées/sorties et recevez des alertes de seuil."
-                    icon="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
-                    image ={Stock.src}
-                    badgeColor="bg-blue-500"
-                />
-
-                <!-- Suivi des clients -->
-                <FeatureCard 
-                    index={3}
-                    title="Suivi des clients"
-                    description="Gérez votre relation client avec historique des interactions."
-                    icon="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
-                    image= {Client.src}
-                    badgeColor="bg-purple-500"
-                />
-
-                <!-- Gestion des fournisseurs -->
-                <FeatureCard 
-                    index={4}
-                    title="Gestion des fournisseurs"
-                    description="Centralisez vos relations avec les fournisseurs et les commandes."
-                    icon="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-                    image= {Fournisseur.src}
-                    badgeColor="bg-orange-500"
-                />
-
-                <!-- Gestion des employés -->
-                <FeatureCard 
-                    index={5}
-                    title="Gestion des employés"
-                    description="Gérez les accès et rôles de votre équipe avec différents niveaux de permission."
-                    icon="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                    image= {Employee.src}
-                    badgeColor="bg-red-500"
-                />
-
-                <!-- Historique des transactions -->
-                <FeatureCard 
-                    index={6}
-                    title="Historique des transactions"
-                    description="Consultez l'historique complet de toutes vos opérations financières."
-                    icon="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                    image= {Transaction.src}
-                    badgeColor="bg-indigo-500"
-                />
-
-                <!-- Tableau de bord analytique -->
-                <FeatureCard 
-                    index={7}
-                    title="Tableau de bord"
-                    description="Vue d'ensemble de votre activité avec indicateurs clés en temps réel."
-                    icon="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                    image= {Dashboard.src}e
-                    badgeColor="bg-pink-500"
-                />
-
-                <!-- Rapports de performance -->
-                <FeatureCard 
-                    index={8}
-                    title="Rapports de performance"
-                    description="Générez des rapports détaillés pour analyser vos résultats."
-                    icon="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                    image= {Performance.src}
-                    badgeColor="bg-teal-500"
-                />
-            </div>
-        </div>
-    </section>
-    
-    <!-- Comparaison -->
-    <section class="py-12 md:py-20 bg-[#f2f5f9]">
-    <div class="container mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-            <h2 class="text-2xl md:text-4xl font-bold text-[#00377d] mb-3 md:mb-4">Pourquoi choisir mPulse ?</h2>
-            <p class="text-base md:text-lg text-gray-600">
-                Comparé aux solutions traditionnelles, mPulse offre une approche moderne de la gestion budgétaire.
-            </p>
-        </div>
-        
-        <!-- Version Desktop (tableau) -->
-        <div class="hidden md:block bg-white rounded-xl shadow-md overflow-hidden">
-            <table class="min-w-full divide-y divide-[#f2f5f9]">
-                <thead class="bg-[#00377d] text-white">
-                    <tr>
-                        <th scope="col" class="px-6 py-3 text-left text-xs sm:text-sm font-medium uppercase tracking-wider">Fonctionnalité</th>
-                        <th scope="col" class="px-6 py-3 text-center text-xs sm:text-sm font-medium uppercase tracking-wider">mPulse</th>
-                        <th scope="col" class="px-6 py-3 text-center text-xs sm:text-sm font-medium uppercase tracking-wider">Solutions classiques</th>
-                    </tr>
-                </thead>
-                <tbody class="bg-white divide-y divide-[#f2f5f9]">
-                    {[
-                        { feature: "Synchronisation automatique", mPulse: "✓", others: "Partielle" },
-                        { feature: "Analyse intelligente", mPulse: "✓", others: "✗" },
-                        { feature: "Gestions Clients/Dépenses", mPulse: "✓", others: "Limitées" },
-                        { feature: "Rapports", mPulse: "✓", others: "✓" },
-                        { feature: "Support 24/7", mPulse: "✓", others: "Limité" },
-                    ].map((row) => (
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-normal text-sm font-medium text-[#09090b]">{row.feature}</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-[#00377d] font-bold">{row.mPulse}</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-500">{row.others}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
-        
-        <!-- Version Mobile (cartes) -->
-        <div class="md:hidden space-y-4">
-            {[
-                { feature: "Synchronisation automatique", mPulse: "✓", others: "Partielle" },
-                { feature: "Analyse intelligente", mPulse: "✓", others: "✗" },
-                { feature: "Gestions Clients/Dépenses", mPulse: "✓", others: "Limitées" },
-                { feature: "Rapports", mPulse: "✓", others: "✓" },
-                { feature: "Support 24/7", mPulse: "✓", others: "Limité" },
-            ].map((row) => (
-                <div class="bg-white rounded-lg shadow-sm p-4">
-                    <div class="font-medium text-[#00377d] mb-2">{row.feature}</div>
-                    <div class="flex justify-between text-sm">
-                        <span class="font-bold text-[#00377d]">mPulse: {row.mPulse}</span>
-                        <span class="text-gray-500">Classiques: {row.others}</span>
+        <!-- Liste des fonctionnalités -->
+        <div class="max-w-4xl mx-auto space-y-6">
+            <!-- Gestion des ventes -->
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-all duration-300">
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-[#00377d] to-[#002a63] text-white rounded-xl flex items-center justify-center shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Gestion des ventes</h3>
+                        <p class="text-gray-600">Enregistrez et suivez toutes vos transactions commerciales en temps réel.</p>
                     </div>
                 </div>
-            ))}
+            </div>
+
+            <!-- Encaissement mobile money -->
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-all duration-300">
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-[#ffd100] to-[#ffed4e] text-[#00377d] rounded-xl flex items-center justify-center shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Suivi des encaissements</h3>
+                        <p class="text-gray-600">Suivez tous vos paiements et encaissements avec historique détaillé.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paiement par carte -->
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-all duration-300">
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-[#00377d] to-[#002a63] text-white rounded-xl flex items-center justify-center shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                        </svg>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Gestion du stock</h3>
+                        <p class="text-gray-600">Contrôlez vos entrées/sorties et recevez des alertes de seuil.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Liens de paiement -->
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-all duration-300">
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-[#ffd100] to-[#ffed4e] text-[#00377d] rounded-xl flex items-center justify-center shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                        </svg>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Suivi des clients</h3>
+                        <p class="text-gray-600">Gérez votre relation client avec historique des interactions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- E-commerce -->
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-all duration-300">
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-[#00377d] to-[#002a63] text-white rounded-xl flex items-center justify-center shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                        </svg>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Gestion des fournisseurs</h3>
+                        <p class="text-gray-600">Centralisez vos relations avec les fournisseurs et les commandes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scan code barre -->
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-all duration-300">
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-[#ffd100] to-[#ffed4e] text-[#00377d] rounded-xl flex items-center justify-center shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
+                        </svg>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Gestion des employés</h3>
+                        <p class="text-gray-600">Gérez les accès et rôles de votre équipe avec différents niveaux de permission.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Impression tickets -->
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-all duration-300">
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-[#00377d] to-[#002a63] text-white rounded-xl flex items-center justify-center shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Historique des transactions</h3>
+                        <p class="text-gray-600">Consultez l'historique complet de toutes vos opérations financières.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Création codes barres -->
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-all duration-300">
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-[#ffd100] to-[#ffed4e] text-[#00377d] rounded-xl flex items-center justify-center shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Tableau de bord</h3>
+                        <p class="text-gray-600">Vue d'ensemble de votre activité avec indicateurs clés en temps réel.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistiques -->
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-all duration-300">
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-[#00377d] to-[#002a63] text-white rounded-xl flex items-center justify-center shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Rapports de performance</h3>
+                        <p class="text-gray-600">Générez des rapports détaillés pour analyser vos résultats.</p>
+                    </div>
+                </div>
+            </div>
         </div>
+
     </div>
 </section>
+
+<style>
+    /* Animation au survol */
+    .hover\:shadow-xl {
+        transition: all 0.3s ease;
+    }
     
-    <CTA />
-</Layout>
+    /* Effet de scale subtil au survol */
+    .hover\:shadow-xl:hover {
+        transform: translateY(-2px);
+    }
+</style>

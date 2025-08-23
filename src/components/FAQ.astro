@@ -1,0 +1,140 @@
+---
+// src/components/FAQ.astro
+---
+
+<section id="faq" class="relative py-16 md:py-24 bg-white overflow-hidden">
+  <!-- Accents décoratifs alignés à la marque (jaune + bleu) -->
+  <div class="pointer-events-none absolute inset-y-0 right-0 w-[38%] md:w-[30%]">
+    <div class="absolute inset-0"></div>
+    <div class="absolute -right-24 top-1/2 -translate-y-1/2 w-[520px] h-[520px] bg-[#ffd100]/20 rounded-full blur-3xl"></div>
+  </div>
+  <div class="pointer-events-none absolute -top-40 -left-40 w-[560px] h-[560px] bg-[#00377d]/10 rounded-full blur-3xl"></div>
+
+  <div class="container mx-auto px-6 max-w-5xl relative z-10">
+    <!-- Header -->
+    <div class="text-center mb-12 md:mb-16">
+      <span class="inline-flex items-center px-3 py-1 rounded-full bg-[#ffd100] text-[#00377d] text-xs font-semibold tracking-wide">FAQ</span>
+      <h2 class="mt-4 text-3xl md:text-5xl font-bold tracking-tight text-[#0b2647]">Questions Fréquemment Posées</h2>
+      <p class="mt-3 text-base md:text-lg text-[#0b2647]/70">Avec mPulse, gérer votre budget n’a jamais été aussi simple !</p>
+
+      <!-- Barre de recherche (filtrage client-side) -->
+      <div class="mt-6 max-w-xl mx-auto">
+        <div class="relative">
+          <input id="faq-search" type="search" placeholder="Rechercher une question…" aria-label="Rechercher dans la FAQ"
+            class="w-full rounded-2xl border text-[#0b2647] border-gray-200 bg-white/80 px-5 py-3 pl-12 outline-none focus:ring-2 focus:ring-[#00377d] focus:border-transparent shadow-sm"/>
+          <svg class="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" viewBox="0 0 24 24" fill="currentColor"><path d="M10 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16Zm8.32 14.9 3.39 3.39-1.41 1.41-3.39-3.39A10 10 0 1 1 10 0a10 10 0 0 1 8.32 16.9Z"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Liste FAQ -->
+    <div id="faq-list" class="space-y-4 md:space-y-5">
+      {[
+        { q: 'Mon site e‑commerce est‑il sécurisé ?', a: 'Oui. mPulse applique le chiffrement TLS 1.2+, des sauvegardes régulières et une séparation stricte des données. Les paiements passent par des PSP certifiés (PCI‑DSS).' },
+        { q: 'Puis‑je synchroniser plusieurs points de vente ?', a: 'Absolument. Vous pouvez connecter plusieurs terminaux et boutiques ; le stock, les ventes et les clients se synchronisent en temps réel.' },
+        { q: 'Quels modes de paiement sont pris en charge ?', a: 'Cartes bancaires, mobile money, liens de paiement, espèces et virement. Vous pouvez activer/désactiver chaque canal selon vos besoins.' },
+        { q: 'Puis‑je annuler mon abonnement à tout moment ?', a: 'Oui. L’abonnement est sans engagement. Vous pouvez arrêter à tout moment depuis votre espace ou via notre support.' },
+        { q: 'Le matériel est‑il compatible avec mon système actuel ?', a: 'Nos solutions s’intègrent à la plupart des logiciels de gestion et caisses du marché.' },
+        { q: 'Puis‑je essayer avant d’acheter ?', a: 'Oui, nous proposons une démo gratuite et guidée. Sur demande, un essai peut être activé.' },
+      ].map((item, i) => (
+        <div class="faq-item group bg-white rounded-2xl shadow-sm border border-gray-100 transition hover:shadow-md">
+          <button class="faq-trigger w-full text-left flex items-center gap-4 p-5 md:p-6" aria-expanded="false" aria-controls={`faq-panel-${i}`} id={`faq-trigger-${i}`}>
+            <div class="shrink-0 relative h-8 w-8 rounded-full bg-gray-900 text-white flex items-center justify-center shadow-sm ring-2 ring-transparent group-hover:ring-[#ffd100] transition">
+              <!-- Icône plus/minus en CSS -->
+              <span class="icon-plus block relative h-3 w-3">
+                <span class="bar-h absolute inset-x-0 top-1/2 -translate-y-1/2 h-[2px] w-full bg-current"></span>
+                <span class="bar-v absolute inset-y-0 left-1/2 -translate-x-1/2 w-[2px] h-full bg-current transition-transform duration-300"></span>
+              </span>
+            </div>
+            <span class="text-base md:text-lg font-medium text-[#0b2647]">{item.q}</span>
+          </button>
+          <div id={`faq-panel-${i}`} role="region" aria-labelledby={`faq-trigger-${i}`} class="faq-panel grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out">
+            <div class="overflow-hidden">
+              <div class="px-5 md:px-6 pb-5 md:pb-6 text-[#0b2647]/80 leading-relaxed">
+                {item.a}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA de secours -->
+    <div class="text-center mt-12 md:mt-16">
+      <p class="text-sm md:text-base text-[#0b2647]/70">Vous ne trouvez pas la réponse ?</p>
+      <a href="/contact" class="inline-flex items-center gap-2 mt-3 rounded-xl bg-gradient-to-r from-[#00377d] to-[#002a5a] px-5 py-3 text-white font-medium shadow-md hover:opacity-95">
+        Contacter le support
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5-5 5M6 12h12"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Quand un item est ouvert */
+  .faq-item[open]{ box-shadow: 0 8px 22px rgba(2,25,58,0.06); border-color: rgba(2,25,58,0.06); }
+  .faq-item[open] .icon-plus .bar-v{ transform: scaleY(0); }
+  .faq-item[open] .faq-panel{ grid-template-rows: 1fr; }
+
+  /* Réduction de mouvement */
+  @media (prefers-reduced-motion: reduce){ .faq-panel{ transition:none !important } }
+</style>
+
+<script is:inline>
+  /**
+   * FAQ UX améliorée (Astro-ready)
+   * - Un seul item ouvert à la fois
+   * - Filtre en direct
+   */
+  const list = document.getElementById('faq-list');
+  const search = document.getElementById('faq-search');
+
+  if (list) {
+    const triggers = Array.from(list.querySelectorAll('.faq-trigger'));
+    const items = triggers.map((btn) => btn.closest('.faq-item'));
+
+    const setExpanded = () => {
+      items.forEach((it) => {
+        if (!it) return;
+        const btn = it.querySelector('.faq-trigger');
+        if (btn) btn.setAttribute('aria-expanded', it.hasAttribute('open') ? 'true' : 'false');
+      });
+    };
+
+    const openItem = (item) => {
+      items.forEach((it) => { if (it && it !== item) it.removeAttribute('open'); });
+      item.toggleAttribute('open');
+      setExpanded();
+    };
+
+    // clic
+    triggers.forEach((btn) => btn.addEventListener('click', () => {
+      const it = btn.closest('.faq-item');
+      if (it) openItem(it);
+    }));
+
+    // recherche (avec fallback pour vieux navigateurs)
+    const normalize = (s) => {
+      const base = (s || '').toLowerCase().normalize('NFD');
+      try { return base.replace(/\p{Diacritic}/gu, ''); } catch { return base.replace(/[\u0300-\u036f]/g, ''); }
+    };
+
+    if (search) search.addEventListener('input', (e) => {
+      const q = normalize(e.target.value);
+      items.forEach((it) => {
+        if (!it) return;
+        const text = normalize(it.textContent || '');
+        it.style.display = text.includes(q) ? '' : 'none';
+      });
+    });
+
+    // Ouvrir le premier
+    if (items[0]) openItem(items[0]);
+
+    // Nettoyage HMR Astro
+    addEventListener('astro:cleanup', () => {
+      triggers.forEach((btn) => btn.replaceWith(btn.cloneNode(true)));
+      if (search) search.replaceWith(search.cloneNode(true));
+    });
+  }
+</script>

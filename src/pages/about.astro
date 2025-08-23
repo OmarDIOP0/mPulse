@@ -4,55 +4,14 @@ import Layout from '../layouts/Layout.astro';
 import CTA from '../components/CTA.astro';
 import Guisse from '../assets/teams/guisse.jpg';
 import Khady from '../assets/teams/khady.jpg';
+import Gueye from '../assets/teams/gueye.png';
+import Sow from '../assets/teams/sow.png';
 import Teams from '../assets/icons/performance.jpg';
 ---
-<Layout title="À propos">
-    <!-- Hero -->
-    <section class="relative py-32 bg-gradient-to-r from-[#00377d] to-[#002a63] text-white overflow-hidden">
-        <div class="absolute inset-0 opacity-20">
-            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center"></div>
-        </div>
-        <div class="container mx-auto px-6 relative z-10 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6 font-serif">Notre mission</h1>
-            <p class="text-xl max-w-3xl mx-auto font-serif">
-                Rendre la gestion financière accessible, intuitive et puissante pour tous.
-            </p>
-        </div>
-    </section>
     
-    <!-- Notre histoire -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col lg:flex-row items-center gap-12">
-                <div class="lg:w-1/2">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#00377d] mb-6 font-serif">mPulse Business App</h2>
-                    
-                    <p class="text-lg text-gray-600 mb-6 font-serif">
-                        mPulse est née de la frustration de ses fondateurs face aux solutions de gestion budgétaire existantes, souvent trop complexes ou limitées pour les utilisateurs.
-                    </p>
-                    
-                    <p class="text-lg text-gray-600 mb-6 font-serif">
-                        Sa mission est de digitaliser la gestion des structures commerciales — <strong>petites</strong> , <strong>moyennes</strong>  ou <strong>grandes</strong> — au Sénégal, en rendant accessibles des outils modernes, simples et efficaces à tous.
-                    </p>
-                    
-                    <p class="text-lg text-gray-600 font-serif">
-                        mPulse POS est une application de caisse (Point of Sale) conçue pour les commerçants et les petites entreprises. Elle simplifie la gestion des ventes, des stocks, de la clientèle et du personnel, tout en fournissant des rapports clairs pour suivre la croissance de votre activité.
-                    </p>
-                </div>
-
-                <div class="lg:w-1/2">
-                    <img 
-                        src={Teams.src}
-                        alt="Équipe mPulse" 
-                        class="rounded-xl shadow-xl"
-                    >
-                </div>
-            </div>
-        </div>
-    </section>
     
     <!-- Valeurs -->
-    <section class="py-20 bg-[#f2f5f9]">
+    <section class="bg-[#f2f5f9] py-20">
         <div class="container mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-[#00377d] mb-4">Nos valeurs</h2>
@@ -117,13 +76,13 @@ import Teams from '../assets/icons/performance.jpg';
                         name: "Mamadou Sow", 
                         role: "CEO & Fondateur", 
                         // bio: "15 ans d'expérience dans la fintech et la gestion d'actifs.",
-                        image: Guisse
+                        image: Sow
                     },
                     { 
                         name: "Abdoulaye Gueye", 
                         role: "CTO & Responsable IT", 
                         // bio: "Spécialiste en UX avec un passé chez plusieurs fintechs européennes.",
-                        image: Guisse
+                        image: Gueye
                     },
                     { 
                         name: "Khady Seck", 
@@ -155,20 +114,3 @@ import Teams from '../assets/icons/performance.jpg';
         </div>
     </section>
     
-    <section class="py-16 bg-[#00377d] text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Vous souhaitez nous rejoindre ?</h2>
-            <p class="text-xl max-w-3xl mx-auto mb-8">
-                Nous sommes toujours à la recherche de talents passionnés pour faire grandir mPulse.
-            </p>
-            <a 
-                href="#" 
-                class="inline-block px-8 py-3 bg-[#ffd100] text-[#09090b] rounded-full hover:bg-[#e6c000] transition-colors font-medium text-lg"
-            >
-                Voir les offres
-            </a>
-        </div>
-    </section>
-    
-    <CTA />
-</Layout>

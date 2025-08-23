@@ -13,28 +13,10 @@ import Accessoires from '../assets/icons/stock.jpg';
 import Tpe from '../assets/icons/tpe.jpg';
 ---
 
-<Layout title="Matériel Professionnel">
-    <!-- Hero Section -->
-    <section class="relative bg-gradient-to-r from-[#002a63] to-[#0056b3] text-white py-24 overflow-hidden">
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="max-w-2xl">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Le matériel qui donne vie à votre entreprise</h1>
-                <p class="text-xl mb-8 opacity-90">
-                    Des solutions matérielles conçues pour simplifier vos opérations et accélérer votre croissance.
-                </p>
-                <a href="#produits" class="bg-white text-[#00377d] font-semibold px-8 py-3 rounded-lg hover:bg-opacity-90 transition-all duration-300 inline-block">
-                    Explorer les produits
-                </a>
-            </div>
-        </div>
-        <div class="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-[#0056b3] to-transparent opacity-20"></div>
-    </section>
-
     <!-- Produits Section -->
-    <section id="produits" class="py-20 bg-white">
+    <section id="produits" class="py-10 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-[#0056b3] font-semibold mb-2 inline-block">SOLUTIONS MATÉRIELLES</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Tout le matériel dont vous avez besoin</h2>
                 <p class="text-lg text-gray-600">
                     Des équipements robustes et fiables conçus pour les professionnels exigeants.
@@ -133,7 +115,7 @@ import Tpe from '../assets/icons/tpe.jpg';
     </section>
 
     <!-- Comparaison Section -->
-    <section class="py-20 bg-[#f8fafc]">
+    <!-- <section class="py-20 bg-[#f8fafc]">
         <div class="container mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-[#00377d] mb-4">Pourquoi choisir notre matériel ?</h2>
@@ -149,7 +131,7 @@ import Tpe from '../assets/icons/tpe.jpg';
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Installation incluse</h3>
+                    <h3 class="text-xl font-bold mb-3 text-[#00377d]">Installation incluse</h3>
                     <p class="text-gray-600">Notre équipe installe et configure tout votre matériel pour une mise en service immédiate.</p>
                 </div>
                 
@@ -159,7 +141,7 @@ import Tpe from '../assets/icons/tpe.jpg';
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Garantie 3 ans</h3>
+                    <h3 class="text-xl font-bold mb-3 text-[#00377d]">Garantie 3 ans</h3>
                     <p class="text-gray-600">Tous nos produits bénéficient d'une garantie étendue avec remplacement express.</p>
                 </div>
                 
@@ -169,54 +151,11 @@ import Tpe from '../assets/icons/tpe.jpg';
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Support 24/7</h3>
+                    <h3 class="text-xl font-bold mb-3 text-[#00377d]">Support 24/7</h3>
                     <p class="text-gray-600">Une équipe dédiée disponible à tout moment pour vous dépanner en cas de besoin.</p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- FAQ Section -->
-<section class="py-20 bg-white">
-    <div class="container mx-auto px-6 max-w-4xl">
-        <h2 class="text-3xl md:text-4xl font-bold text-center text-[#00377d] mb-12">Questions fréquentes</h2>
-        
-        <div class="space-y-4">
-            {[
-                {
-                    question: "Le matériel est-il compatible avec mon système actuel ?",
-                    answer: "Nos solutions sont conçues pour s'intégrer facilement avec la plupart des logiciels de gestion et caisses enregistreuses du marché."
-                },
-                {
-                    question: "Puis-je essayer avant d'acheter ?",
-                    answer: "Oui, nous proposons une démonstration gratuite de 14 jours avec notre matériel en conditions réelles."
-                },
-                {
-                    question: "Quels sont les délais de livraison ?",
-                    answer: "La plupart de nos produits sont expédiés sous 48h. Pour les solutions sur mesure, comptez 5 à 7 jours ouvrés."
-                },
-                {
-                    question: "Proposez-vous des solutions de financement ?",
-                    answer: "Absolument. Nous travaillons avec plusieurs partenaires financiers pour vous proposer des solutions de paiement adaptées à votre budget."
-                }
-            ].map((item, index) => (
-                <div class="border border-gray-200 rounded-lg overflow-hidden">
-                    <div class="collapse collapse-arrow bg-white">
-                        <input type="radio" name="my-accordion-4" />
-                        <div class="collapse-title text-base font-semibold min-h-0 py-4 px-6">
-                            {item.question}
-                        </div>
-                        <div class="collapse-content px-6 pb-4 text-gray-600">
-                            <p>{item.answer}</p>
-                        </div>
-                    </div>
-                </div>
-            ))}
-        </div>
-    </div>
-</section>
+    </section> -->
 
     </section>
-
-    <CTA />
-</Layout>

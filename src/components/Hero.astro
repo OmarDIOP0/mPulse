@@ -1,111 +1,246 @@
 ---
-// src/components/Hero.astro
+import s1 from "../assets/app/dashboard.jpg";
+import s2 from "../assets/app/caisse.jpg";
+import s3 from "../assets/app/depense.jpg";
+import s4 from "../assets/app/ecommerce1.jpg";
+import s5 from "../assets/app/autre.jpg";
+import AppStore from '../assets/icons/app-store.png';
+import GooglePlay from '../assets/icons/play-store.png';
+
+const screens = [s1, s2, s3, s4, s5].filter(Boolean);
 ---
-<section class="relative py-24 md:py-32 lg:py-40 bg-gradient-to-r from-[#00377d] to-[#002a63] text-white overflow-hidden">
-    <!-- Fond animé avec éléments décoratifs -->
-    <div class="absolute inset-0 opacity-10">
-        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center"></div>
-    </div>
-    
-    <!-- Points décoratifs -->
-    <div class="absolute top-0 left-0 w-32 h-32 rounded-full bg-[#ffd100]/10 blur-3xl"></div>
-    <div class="absolute bottom-0 right-0 w-64 h-64 rounded-full bg-[#ffd100]/10 blur-3xl"></div>
-    
-    <div class="container mx-auto px-6 relative z-10">
-        <div class="flex flex-col lg:flex-row items-center gap-12">
-            <!-- Texte principal -->
-            <div class="lg:w-1/2 text-center lg:text-left animate-fadeIn">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                    Maîtrisez votre budget avec <span class="text-[#ffd100]">mPulse</span>
-                </h1>
-                <p class="text-xl md:text-2xl opacity-90 mb-8 max-w-2xl mx-auto lg:mx-0">
-                    La solution intelligente pour une gestion financière claire et sans stress.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-                    <a 
-                        href="/pricing" 
-                        class="px-8 py-3 bg-[#ffd100] text-[#09090b] rounded-full hover:bg-[#e6c000] transition-colors font-medium text-lg shadow-lg hover:shadow-xl"
-                    >
-                        Commencer l'essai gratuit
-                    </a>
-                    <a 
-                        href="/features" 
-                        class="px-8 py-3 bg-white/10 text-white border border-white/20 rounded-full hover:bg-white/20 transition-colors font-medium text-lg"
-                    >
-                        Voir les fonctionnalités
-                    </a>
-                </div>
-                
-                <div class="mt-8 flex items-center justify-center lg:justify-start space-x-2 text-sm">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#ffd100]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>Aucune carte de crédit requise</span>
-                    <span class="opacity-50">•</span>
-                    <span>90 jours gratuits</span>
-                </div>
-            </div>
-            
-            <!-- Visuel hero -->
-            <div class="lg:w-1/2 mt-12 lg:mt-0 animate-fadeIn" style="animation-delay: 0.2s">
-                <div class="relative">
-                    <!-- Fond de carte -->
-                    <div class="absolute -inset-4 bg-[#ffd100]/20 rounded-2xl rotate-6"></div>
-                    
-                    <!-- Image principale -->
-                    <div class="relative rounded-xl overflow-hidden shadow-2xl border border-white/10">
-                        <img 
-                            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
-                            alt="Tableau de bord mPulse" 
-                            class="w-full h-auto"
-                            loading="eager"
-                        >
-                        
-                        <!-- Badge sur l'image -->
-                        <div class="absolute -top-4 -right-4 bg-[#ffd100] text-[#09090b] px-4 py-2 rounded-full font-bold text-sm shadow-lg">
-                            Nouveau
-                        </div>
-                    </div>
-                    
-                    <!-- Mini carte flottante -->
-                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-xl border border-gray-200 w-64">
-                        <div class="flex items-center mb-3">
-                            <div class="h-3 w-3 rounded-full bg-green-500 mr-2"></div>
-                            <span class="text-sm font-medium text-gray-700">Objectif atteint</span>
-                        </div>
-                        <p class="text-xs text-gray-500 mb-2">Économies mensuelles</p>
-                        <p class="text-2xl font-bold text-[#00377d]">125 000 <strong class="text-[#ffd100]">FCFA</strong></p>
-                        <div class="h-2 bg-gray-200 rounded-full mt-2 overflow-hidden">
-                            <div class="h-full bg-[#ffd100] rounded-full" style="width: 75%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+<section id="hero" class="relative py-16 md:py-24 bg-white overflow-hidden text-[#0b2647]">
+  <!-- Bande/halo jaune côté BAS -->
+  <div class="pointer-events-none absolute inset-x-0 bottom-0 h-[30%] md:h-[25%]">
+    <div class="absolute inset-0 bg-gradient-to-t from-[#ffd100]/60 via-[#ffd100]/30 to-transparent"></div>
+    <div class="absolute left-1/2 -translate-x-1/2 -bottom-20 w-[520px] h-[520px] bg-[#ffd100]/20 rounded-full blur-3xl"></div>
+  </div>
+
+  <!-- Cercles doux bleus -->
+  <div class="pointer-events-none absolute -bottom-40 -left-40 w-[560px] h-[560px] bg-[#00377d]/10 rounded-full blur-3xl"></div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="flex flex-col lg:flex-row items-center gap-12">
+      <!-- Texte -->
+      <div class="lg:w-1/2 text-center lg:text-left">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+          Maîtrisez votre <span class="text-[#00377d]">budget</span> avec <span class="text-[#ffd100]">mPulse</span>
+        </h1>
+        <p class="text-lg md:text-xl text-[#0b2647]/80 mb-8 leading-relaxed">
+          La solution intelligente pour une gestion financière claire et sans stress
+        </p>
+
+        <!-- Badges -->
+        <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-10">
+          <a href="#" class="inline-flex items-center justify-center px-6 py-3 bg-gray-900 text-white rounded-xl hover:opacity-90 transition-opacity shadow-md hover:shadow-lg">
+            <!-- <svg class="w-8 h-8 mr-3" viewBox="0 0 24 24" fill="currentColor"><path d="M17.924 17.315c-.057.174-.193.332-.348.367-.156.035-.343-.047-.483-.197-1.405-1.566-3.57-1.95-5.095-1.94-1.525.01-3.122.49-4.265 1.33-.299.218-.595.227-.793.157-.197-.07-.384-.247-.45-.525-.066-.279-.01-.599.162-.921 1.336-2.437 3.886-3.665 6.9-3.665 2.996 0 5.32 1.31 6.56 3.748.173.321.225.642.158.921z"/></svg> -->
+            <img src={GooglePlay.src} alt="Google Play" class="w-8 h-8 mr-3"/>
+            <span class="text-left"><span class="block text-xs">Télécharger sur</span>
+            <span class="block text-lg font-semibold">Google Play</span>
+          </a>
+          <a href="https://testflight.apple.com/join/gRS2JbmQ" target="_blank" class="inline-flex items-center justify-center px-6 py-3 bg-gray-900 text-white rounded-xl hover:opacity-90 transition-opacity shadow-md hover:shadow-lg">
+            <!-- <svg class="w-8 h-8 mr-3" viewBox="0 0 24 24" fill="currentColor"><path d="M17.924 17.315c-.057.174-.193.332-.348.367-.156.035-.343-.047-.483-.197-1.405-1.566-3.57-1.95-5.095-1.94-1.525.01-3.122.49-4.265 1.33-.299.218-.595.227-.793.157-.197-.07-.384-.247-.45-.525-.066-.279-.01-.599.162-.921 1.336-2.437 3.886-3.665 6.9-3.665 2.996 0 5.32 1.31 6.56 3.748.173.321.225.642.158.921z"/></svg> -->
+            <img src={AppStore.src} alt="App Store" class="w-8 h-8 mr-3"/>
+            <span class="text-left"><span class="block text-xs">Télécharger sur</span>
+            <span class="block text-lg font-semibold">App Store</span></span>
+          </a>
         </div>
+
+        <div class="hidden lg:flex items-center text-sm text-[#0b2647]/70 animate-bounce">
+          <span class="mr-2"><a href="#fonctionnalites" class="mr-2">Faites défiler</a>
+        </span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </div>
+      </div>
+
+      <!-- Visuel app / Stacks -->
+      <div class="lg:w-1/2 flex justify-center">
+        <div class="relative w-80">
+          <!-- Glow -->
+          <div class="absolute -inset-8 bg-gradient-to-br from-[#ffd100]/25 via-transparent to-transparent rounded-[44px] blur-2xl"></div>
+
+          <!-- Téléphone -->
+          <div class="relative bg-gray-900 rounded-[40px] p-3 shadow-2xl border-[14px] border-gray-900">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-6 bg-gray-900 rounded-b-2xl z-10"></div>
+
+            <div class="relative h-[600px] rounded-[30px] overflow-hidden isolate" id="screen-stack" aria-label="Aperçu de l'application ENCUBE">
+              <!-- Fond ENCUBE -->
+              <div class="absolute inset-0 bg-gradient-to-b from-[#00377d] to-[#002a5a]"></div>
+
+              <!-- Pile d'écrans -->
+              {screens.map((src, i) => (
+                <img src={src.src} alt={`Capture ${i+1}`} loading={i===0? 'eager':'lazy'}
+                     class={`stack-shot absolute inset-0 w-full h-full object-cover opacity-0 translate-y-6 scale-[1.03] will-change-transform transition-[opacity,transform,filter] duration-700 ${i===0? 'is-active':''}`}
+                     style={`--i:${i};`} />
+              ))}
+
+              <!-- Voile verre -->
+              <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-white/5 mix-blend-soft-light"></div>
+            </div>
+          </div>
+
+          <!-- Dots -->
+          <div class="mt-6 flex justify-center gap-2" id="stack-dots" role="tablist" aria-label="Navigation des captures">
+            {screens.map((_, i) => (
+              <button class={`dot w-2.5 h-2.5 rounded-full bg-gray-300 aria-selected:bg-[#00377d]`} role="tab" aria-selected={i===0? 'true':'false'} aria-controls={`cap-${i}`} data-index={i} />
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
-    
-    <!-- Animation Lottie -->
-    <div class="absolute bottom-0 left-0 w-full h-32 overflow-hidden z-0 opacity-20">
-        <lottie-player 
-            src="https://assets10.lottiefiles.com/packages/lf20_sk5h1kfn.json" 
-            background="transparent" 
-            speed="1" 
-            loop 
-            autoplay
-            class="w-full h-full"
-        ></lottie-player>
-    </div>
+  </div>
 </section>
 
 <style>
-    .animate-fadeIn {
-        animation: fadeIn 1s ease-out forwards;
-        opacity: 0;
-    }
-    
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
+  /* Tilt/parallax via variables CSS */
+  #screen-stack{ transform: perspective(1200px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)); transition: transform .2s ease-out; }
+  .stack-shot.is-active{ opacity:1; transform: translateY(0) scale(1); filter:saturate(1.04) contrast(1.02); }
+
+  /* Animation de flottement pour le téléphone */
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(1deg); }
+    66% { transform: translateY(5px) rotate(-1deg); }
+  }
+  
+  .relative.w-80 {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  /* Réduction de mouvement */
+  @media (prefers-reduced-motion: reduce){
+    .stack-shot{ transition:none !important }
+    #screen-stack{ transition:none !important }
+    .relative.w-80 { animation: none; }
+  }
 </style>
+
+<script>
+  /**
+   * Animation "Stacks" CORRIGÉE:
+   * - Auto-play + contrôle dots + swipe/drag
+   * - Code JavaScript fonctionnel
+   */
+  document.addEventListener('DOMContentLoaded', () => {
+    const section = document.getElementById('hero');
+    const stack = document.getElementById('screen-stack');
+    const shots = stack ? Array.from(stack.querySelectorAll('.stack-shot')) : [];
+    const stackDotsEl = document.getElementById('stack-dots');
+    const dots = stackDotsEl ? Array.from(stackDotsEl.querySelectorAll('.dot')) : [];
+
+    if (shots.length > 0) {
+      let idx = 0;
+      let autoplay = true;
+      let rafId = 0;
+      const D = 4500; // ms
+
+      const setActive = (i: number) => {
+        idx = (i + shots.length) % shots.length;
+        shots.forEach((el, k) => el.classList.toggle('is-active', k === idx));
+        dots.forEach((d, k) => d.setAttribute('aria-selected', k === idx ? 'true' : 'false'));
+      };
+
+      // Auto-play
+      let t0 = performance.now();
+      const tick = (t: number) => {
+        if (!autoplay) { 
+          t0 = t; 
+          rafId = requestAnimationFrame(tick); 
+          return; 
+        }
+        if (t - t0 >= D) { 
+          setActive(idx + 1); 
+          t0 = t; 
+        }
+        rafId = requestAnimationFrame(tick);
+      };
+      rafId = requestAnimationFrame(tick);
+
+      // Dots
+      dots.forEach((b, i) => {
+        b.addEventListener('click', () => {
+          autoplay = false;
+          setActive(i);
+          setTimeout(() => { autoplay = true; }, 3000);
+        });
+      });
+
+      // Scroll-driven
+      const onScroll = () => {
+        if (!section) return;
+        const r = section.getBoundingClientRect();
+        const vh = window.innerHeight || document.documentElement.clientHeight;
+        const total = r.height + vh;
+        const passed = vh - r.top;
+        const p = Math.max(0, Math.min(1, passed / total));
+        const i = Math.floor(p * (shots.length - 0.0001));
+        if (i !== idx) setActive(i);
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+
+      // Tilt/parallax
+      if (stack) {
+        const onMove = (e: MouseEvent) => {
+          const rect = stack.getBoundingClientRect();
+          const cx = rect.left + rect.width / 2;
+          const cy = rect.top + rect.height / 2;
+          const dx = ((e.clientX || cx) - cx) / (rect.width / 2);
+          const dy = ((e.clientY || cy) - cy) / (rect.height / 2);
+          const max = 6;
+          stack.style.setProperty('--ry', `${-dx * max}deg`);
+          stack.style.setProperty('--rx', `${dy * max}deg`);
+        };
+        
+        stack.addEventListener('mousemove', onMove);
+        stack.addEventListener('mouseleave', () => { 
+          stack.style.setProperty('--ry', '0deg'); 
+          stack.style.setProperty('--rx', '0deg'); 
+        });
+
+        // Swipe/drag
+        let dragging = false;
+        let startX = 0;
+        
+        const start = (x: number) => { 
+          dragging = true; 
+          startX = x; 
+          autoplay = false; 
+        };
+        
+        const end = (x:number) => {
+          if (!dragging) return;
+          dragging = false;
+          
+          const dx = x - startX;
+          const th = 30; // px
+          
+          if (dx > th) {
+            setActive(idx - 1);
+          } else if (dx < -th) {
+            setActive(idx + 1);
+          }
+          
+          setTimeout(() => { autoplay = true; }, 3000);
+        };
+        
+        stack.addEventListener('pointerdown', (e) => { 
+          stack.setPointerCapture(e.pointerId); 
+          start(e.clientX); 
+        });
+        
+        stack.addEventListener('pointerup', (e) => end(e.clientX));
+        stack.addEventListener('pointercancel', (e) => end(e.clientX));
+
+        // Accessibilité: pause au survol
+        stack.addEventListener('mouseenter', () => autoplay = false);
+        stack.addEventListener('mouseleave', () => autoplay = true);
+      }
+
+      // Reduced motion
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        autoplay = false;
+      }
+    }
+  });
+</script>
