@@ -10,61 +10,123 @@
   </div>
   <div class="pointer-events-none absolute -top-40 -left-40 w-[560px] h-[560px] bg-[#00377d]/10 rounded-full blur-3xl"></div>
 
-  <div class="container mx-auto px-6 max-w-5xl relative z-10">
+  <div class="container mx-auto px-4 sm:px-6 max-w-5xl relative z-10">
     <!-- Header -->
     <div class="text-center mb-12 md:mb-16">
       <span class="inline-flex items-center px-3 py-1 rounded-full bg-[#ffd100] text-[#00377d] text-xs font-semibold tracking-wide">FAQ</span>
-      <h2 class="mt-4 text-3xl md:text-5xl font-bold tracking-tight text-[#0b2647]">Questions Fréquemment Posées</h2>
-      <p class="mt-3 text-base md:text-lg text-[#0b2647]/70">Avec mPulse, gérer votre budget n’a jamais été aussi simple !</p>
+      <h2 class="mt-4 text-2xl md:text-5xl font-bold tracking-tight text-[#0b2647]">Questions Fréquemment Posées</h2>
+      <p class="mt-3 text-sm md:text-lg text-[#0b2647]/70 max-w-2xl mx-auto">Avec mPulse, gérer votre budget n'a jamais été aussi simple !</p>
 
       <!-- Barre de recherche (filtrage client-side) -->
       <div class="mt-6 max-w-xl mx-auto">
         <div class="relative">
           <input id="faq-search" type="search" placeholder="Rechercher une question…" aria-label="Rechercher dans la FAQ"
-            class="w-full rounded-2xl border text-[#0b2647] border-gray-200 bg-white/80 px-5 py-3 pl-12 outline-none focus:ring-2 focus:ring-[#00377d] focus:border-transparent shadow-sm"/>
-          <svg class="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" viewBox="0 0 24 24" fill="currentColor"><path d="M10 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16Zm8.32 14.9 3.39 3.39-1.41 1.41-3.39-3.39A10 10 0 1 1 10 0a10 10 0 0 1 8.32 16.9Z"/></svg>
+            class="w-full rounded-2xl border text-[#0b2647] border-gray-200 bg-white/80 px-4 py-3 pl-12 outline-none focus:ring-2 focus:ring-[#00377d] focus:border-transparent shadow-sm text-sm md:text-base"/>
+          <svg class="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 md:h-5 md:w-5 text-gray-400" viewBox="0 0 24 24" fill="currentColor"><path d="M10 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16Zm8.32 14.9 3.39 3.39-1.41 1.41-3.39-3.39A10 10 0 1 1 10 0a10 10 0 0 1 8.32 16.9Z"/></svg>
         </div>
       </div>
     </div>
 
     <!-- Liste FAQ -->
-    <div id="faq-list" class="space-y-4 md:space-y-5">
+    <div id="faq-list" class="space-y-3 md:space-y-5">
       {[
-        { q: "Comment créer une catégorie?", a: "Pour ajouter une catégorie d'article, allez dans le menu Autres, cliquez sur Catégories d'article, puis sur le bouton (+), remplissez le formulaire et sauvegardez." },
-        { q: "Comment ajouter le stock d'un article ?", a: "Pour ajouter une catégorie d'article, allez dans le menu Autres, cliquez sur Mouvements de stock, puis sur le bouton (+), remplissez le formulaire en choisissant le type d'entrée (Achat ou autre), sélectionnez l'article concerné, indiquez la quantité et le prix unitaire si nécessaire, choisissez l'entrepôt de réception, sélectionnez un fournisseur si besoin, et sauvegardez." },
-        { q: "Comment créer un destinataire de depense ?", a: "Pour ajouter une catégorie d'article, allez dans le menu Autres, cliquez sur Destinataires des dépenses, puis sur le bouton (+), remplissez le formulaire et sauvegardez." },
-        { q: 'Comment ajouter un article ?', a: 'Pour ajouter un article, allez dans le menu Autres, cliquez sur Articles, puis sur le bouton (+), remplissez le formulaire de création et sauvegardez.' },
-        { q: 'Comment créer un compte ?', a: 'Pour créer un compte sur mPulse (mobile iOS/Android ou Web), ouvrez l’application, cliquez sur Créer un compte, choisissez une authentification par téléphone ou email, remplissez le formulaire, saisissez le code OTP reçu et validez pour être redirigé vers la page d’accueil.' },
-        { q: 'Comment enregistrer un client ?', a: 'Pour ajouter un client, allez dans le menu Autres, cliquez sur Clients, puis sur le bouton (+), remplissez le formulaire et sauvegardez.' },
-      ].map((item, i) => (
-        <div class="faq-item group bg-white rounded-2xl shadow-sm border border-gray-100 transition hover:shadow-md">
-          <button class="faq-trigger w-full text-left flex items-center gap-4 p-5 md:p-6" aria-expanded="false" aria-controls={`faq-panel-${i}`} id={`faq-trigger-${i}`}>
-            <div class="shrink-0 relative h-8 w-8 rounded-full bg-gray-900 text-white flex items-center justify-center shadow-sm ring-2 ring-transparent group-hover:ring-[#ffd100] transition">
+        { 
+          q: "Comment créer une catégorie?", 
+          a: "Pour ajouter une catégorie d'article, allez dans le menu Autres, cliquez sur Catégories d'article, puis sur le bouton (+), remplissez le formulaire et sauvegardez.",
+          video: "N78SDkU8eSk" 
+        },
+        { 
+          q: "Comment ajouter le stock d'un article ?", 
+          a: "Pour ajouter une catégorie d'article, allez dans le menu Autres, cliquez sur Mouvements de stock, puis sur le bouton (+), remplissez le formulaire en choisissant le type d'entrée (Achat ou autre), sélectionnez l'article concerné, indiquez la quantité et le prix unitaire si nécessaire, choisissez l'entrepôt de réception, sélectionnez un fournisseur si besoin, et sauvegardez.",
+          video: "DpmipsW2s0c"
+        },
+        { 
+          q: "Comment créer un destinataire de depense ?", 
+          a: "Pour ajouter une catégorie d'article, allez dans le menu Autres, cliquez sur Destinataires des dépenses, puis sur le bouton (+), remplissez le formulaire et sauvegardez.",
+          video: "U8aEFRPp1QQ"
+        },
+        { 
+          q: 'Comment ajouter un article ?', 
+          a: 'Pour ajouter un article, allez dans le menu Autres, cliquez sur Articles, puis sur le bouton (+), remplissez le formulaire de création et sauvegardez.',
+          video: "4awqbpQzhXU"
+        },
+        { 
+          q: 'Comment créer un compte ?', 
+          a: 'Pour créer un compte sur mPulse (mobile iOS/Android ou Web), ouvrez l\'application, cliquez sur Créer un compte, choisissez une authentification par téléphone ou email, remplissez le formulaire, saisissez le code OTP reçu et validez pour être redirigé vers la page d\'accueil.',
+          video: "J3czwjZeu2s"
+        },
+        { 
+          q: 'Comment enregistrer un client ?', 
+          a: 'Pour ajouter un client, allez dans le menu Autres, cliquez sur Clients, puis sur le bouton (+), remplissez le formulaire et sauvegardez.',
+          video: "1n9rrb9Pkbo"
+        },
+      ].map((item, i) => {
+        const embedUrl = `https://www.youtube.com/embed/${item.video}?rel=0&modestbranding=1`;
+        return (
+        <div class="faq-item group bg-white rounded-xl md:rounded-2xl shadow-sm border border-gray-100 transition hover:shadow-md">
+          <button class="faq-trigger w-full text-left flex items-center gap-3 md:gap-4 p-4 md:p-6" aria-expanded="false" aria-controls={`faq-panel-${i}`} id={`faq-trigger-${i}`}>
+            <div class="shrink-0 relative h-7 w-7 md:h-8 md:w-8 rounded-full bg-gray-900 text-white flex items-center justify-center shadow-sm ring-2 ring-transparent group-hover:ring-[#ffd100] transition">
               <!-- Icône plus/minus en CSS -->
-              <span class="icon-plus block relative h-3 w-3">
+              <span class="icon-plus block relative h-2.5 w-2.5 md:h-3 md:w-3">
                 <span class="bar-h absolute inset-x-0 top-1/2 -translate-y-1/2 h-[2px] w-full bg-current"></span>
                 <span class="bar-v absolute inset-y-0 left-1/2 -translate-x-1/2 w-[2px] h-full bg-current transition-transform duration-300"></span>
               </span>
             </div>
-            <span class="text-base md:text-lg font-medium text-[#0b2647]">{item.q}</span>
+            <span class="text-sm md:text-lg font-medium text-[#0b2647] leading-tight md:leading-normal">{item.q}</span>
           </button>
           <div id={`faq-panel-${i}`} role="region" aria-labelledby={`faq-trigger-${i}`} class="faq-panel grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out">
             <div class="overflow-hidden">
-              <div class="px-5 md:px-6 pb-5 md:pb-6 text-[#0b2647]/80 leading-relaxed">
-                {item.a}
+              <div class="px-4 md:px-6 pb-4 md:pb-6 text-[#0b2647]/80 leading-relaxed">
+                <div class="mb-3 md:mb-4">
+                  <p class="text-gray-700 text-sm md:text-base">{item.a}</p>
+                </div>
+                
+                <!-- Section Vidéo YouTube Shorts -->
+                <div class="mt-3 md:mt-4 pt-3 md:pt-4 border-t border-gray-200">
+                  <div class="flex items-center gap-2 mb-2 md:mb-3">
+                    <svg class="h-4 w-4 md:h-5 md:w-5 text-[#ff0000]" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                    </svg>
+                    <span class="text-xs md:text-sm font-medium text-gray-900">Tutoriel vidéo</span>
+                    <span class="inline-flex items-center px-1.5 py-0.5 md:px-2 md:py-1 rounded-full bg-[#ffd100] text-[#00377d] text-xs font-medium">
+                      Short
+                    </span>
+                  </div>
+                  
+                  <!-- Container pour le short optimisé -->
+                  <div class="flex justify-center">
+                    <div class="bg-gray-100 rounded-xl md:rounded-2xl overflow-hidden shadow-sm w-full max-w-[280px] sm:max-w-[320px] md:max-w-[350px]">
+                      <iframe 
+                        src={embedUrl}
+                        class="w-full h-[300px] sm:h-[370px] md:h-[420px]"
+                        title={`Tutoriel court : ${item.q}`}
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        loading="lazy"
+                      >
+                      </iframe>
+                    </div>
+                  </div>
+                  
+                  <p class="text-xs text-gray-500 mt-2 md:mt-3 text-center">
+                    💡 Tutoriel rapide en format court
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      ))}
+        );
+      })}
     </div>
 
     <!-- CTA de secours -->
     <div class="text-center mt-12 md:mt-16">
       <p class="text-sm md:text-base text-[#0b2647]/70">Vous ne trouvez pas la réponse ?</p>
-      <a href="/contact" class="inline-flex items-center gap-2 mt-3 rounded-xl bg-gradient-to-r from-[#00377d] to-[#002a5a] px-5 py-3 text-white font-medium shadow-md hover:opacity-95">
+      <a href="/contact" class="inline-flex items-center gap-2 mt-3 rounded-lg md:rounded-xl bg-gradient-to-r from-[#00377d] to-[#002a5a] px-4 py-2.5 md:px-5 md:py-3 text-white font-medium shadow-md hover:opacity-95 text-sm md:text-base">
         Contacter le support
-        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5-5 5M6 12h12"/></svg>
+        <svg class="h-4 w-4 md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5-5 5M6 12h12"/></svg>
       </a>
     </div>
   </div>
@@ -85,6 +147,7 @@
    * FAQ UX améliorée (Astro-ready)
    * - Un seul item ouvert à la fois
    * - Filtre en direct
+   * - Optimisé pour YouTube Shorts
    */
   const list = document.getElementById('faq-list');
   const search = document.getElementById('faq-search');
@@ -102,18 +165,58 @@
     };
 
     const openItem = (item) => {
-      items.forEach((it) => { if (it && it !== item) it.removeAttribute('open'); });
+      items.forEach((it) => { 
+        if (it && it !== item) it.removeAttribute('open'); 
+      });
       item.toggleAttribute('open');
       setExpanded();
     };
 
-    // clic
+    // Chargement paresseux des shorts
+    const loadYouTubeShort = (iframe) => {
+      const currentSrc = iframe.src;
+      if (!currentSrc.includes('autoplay=1')) {
+        iframe.src = currentSrc + '&autoplay=1';
+      }
+    };
+
+    // Observer pour charger les shorts quand ils deviennent visibles
+    const shortObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const iframe = entry.target.querySelector('iframe');
+          if (iframe) {
+            loadYouTubeShort(iframe);
+          }
+        }
+      });
+    }, { threshold: 0.1 });
+
+    // Clic sur les questions
     triggers.forEach((btn) => btn.addEventListener('click', () => {
       const it = btn.closest('.faq-item');
-      if (it) openItem(it);
+      if (it) {
+        openItem(it);
+        
+        // Charger le short quand l'item s'ouvre
+        if (it.hasAttribute('open')) {
+          const iframe = it.querySelector('iframe');
+          if (iframe) {
+            setTimeout(() => loadYouTubeShort(iframe), 300);
+          }
+        }
+      }
     }));
 
-    // recherche (avec fallback pour vieux navigateurs)
+    // Observer tous les containers de shorts
+    items.forEach(item => {
+      const shortContainer = item.querySelector('.bg-gray-100');
+      if (shortContainer) {
+        shortObserver.observe(shortContainer);
+      }
+    });
+
+    // Recherche (avec fallback pour vieux navigateurs)
     const normalize = (s) => {
       const base = (s || '').toLowerCase().normalize('NFD');
       try { return base.replace(/\p{Diacritic}/gu, ''); } catch { return base.replace(/[\u0300-\u036f]/g, ''); }
@@ -128,13 +231,14 @@
       });
     });
 
-    // Ouvrir le premier
+    // Ouvrir le premier item
     if (items[0]) openItem(items[0]);
 
     // Nettoyage HMR Astro
     addEventListener('astro:cleanup', () => {
       triggers.forEach((btn) => btn.replaceWith(btn.cloneNode(true)));
       if (search) search.replaceWith(search.cloneNode(true));
+      shortObserver.disconnect();
     });
   }
 </script>
