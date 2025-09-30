@@ -30,12 +30,12 @@
     <!-- Liste FAQ -->
     <div id="faq-list" class="space-y-4 md:space-y-5">
       {[
-        { q: 'Mon site e‑commerce est‑il sécurisé ?', a: 'Oui. mPulse applique le chiffrement TLS 1.2+, des sauvegardes régulières et une séparation stricte des données. Les paiements passent par des PSP certifiés (PCI‑DSS).' },
-        { q: 'Puis‑je synchroniser plusieurs points de vente ?', a: 'Absolument. Vous pouvez connecter plusieurs terminaux et boutiques ; le stock, les ventes et les clients se synchronisent en temps réel.' },
-        { q: 'Quels modes de paiement sont pris en charge ?', a: 'Cartes bancaires, mobile money, liens de paiement, espèces et virement. Vous pouvez activer/désactiver chaque canal selon vos besoins.' },
-        { q: 'Puis‑je annuler mon abonnement à tout moment ?', a: 'Oui. L’abonnement est sans engagement. Vous pouvez arrêter à tout moment depuis votre espace ou via notre support.' },
-        { q: 'Le matériel est‑il compatible avec mon système actuel ?', a: 'Nos solutions s’intègrent à la plupart des logiciels de gestion et caisses du marché.' },
-        { q: 'Puis‑je essayer avant d’acheter ?', a: 'Oui, nous proposons une démo gratuite et guidée. Sur demande, un essai peut être activé.' },
+        { q: "Comment créer une catégorie?", a: "Pour ajouter une catégorie d'article, allez dans le menu Autres, cliquez sur Catégories d'article, puis sur le bouton (+), remplissez le formulaire et sauvegardez." },
+        { q: "Comment ajouter le stock d'un article ?", a: "Pour ajouter une catégorie d'article, allez dans le menu Autres, cliquez sur Mouvements de stock, puis sur le bouton (+), remplissez le formulaire en choisissant le type d'entrée (Achat ou autre), sélectionnez l'article concerné, indiquez la quantité et le prix unitaire si nécessaire, choisissez l'entrepôt de réception, sélectionnez un fournisseur si besoin, et sauvegardez." },
+        { q: "Comment créer un destinataire de depense ?", a: "Pour ajouter une catégorie d'article, allez dans le menu Autres, cliquez sur Destinataires des dépenses, puis sur le bouton (+), remplissez le formulaire et sauvegardez." },
+        { q: 'Comment ajouter un article ?', a: 'Pour ajouter un article, allez dans le menu Autres, cliquez sur Articles, puis sur le bouton (+), remplissez le formulaire de création et sauvegardez.' },
+        { q: 'Comment créer un compte ?', a: 'Pour créer un compte sur mPulse (mobile iOS/Android ou Web), ouvrez l’application, cliquez sur Créer un compte, choisissez une authentification par téléphone ou email, remplissez le formulaire, saisissez le code OTP reçu et validez pour être redirigé vers la page d’accueil.' },
+        { q: 'Comment enregistrer un client ?', a: 'Pour ajouter un client, allez dans le menu Autres, cliquez sur Clients, puis sur le bouton (+), remplissez le formulaire et sauvegardez.' },
       ].map((item, i) => (
         <div class="faq-item group bg-white rounded-2xl shadow-sm border border-gray-100 transition hover:shadow-md">
           <button class="faq-trigger w-full text-left flex items-center gap-4 p-5 md:p-6" aria-expanded="false" aria-controls={`faq-panel-${i}`} id={`faq-trigger-${i}`}>
