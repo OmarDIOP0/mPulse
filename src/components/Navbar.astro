@@ -1,155 +1,189 @@
-    ---
-    // src/components/Navbar.astro
-    import Logo from '../assets/icons/logo6.svg';
-    const navItems = [
-        { name: "Fonctionnalités", path: "#fonctionnalites" },
-        { name: "Solutions", path: "#solutions" },
-        { name: "Materiel", path: "#materiel" },
-        { name: "Tarifs", path: "#tarifs" },
-        { name: "À propos", path: "#apropos" },
-    ];
-    const currentUrl = Astro.url.pathname;
-    ---
+---
+// src/components/Navbar.astro
+import Logo from '../assets/icons/logo6.svg';
 
-    <!-- Conteneur externe pour le sticky -->
-    <div class="sticky top-0 z-50 w-full py-4 bg-white backdrop-blur-sm">
-        <header class="w-full flex justify-center px-4">
-            <div class="bg-[#00377d] text-white md:rounded-full shadow-lg w-full max-w-6xl">
+const navItems = [
+    { name: "Fonctionnalités", path: "#fonctionnalites" },
+    { name: "Solutions", path: "#solutions" },
+    { name: "Materiel", path: "#materiel" },
+    { name: "Tarifs", path: "#tarifs" },
+    { name: "À propos", path: "#apropos" },
+];
+---
 
-                <div class="container mx-auto px-6 py-3">
-                    <div class="flex items-center justify-between">
-                        <a href="/" class="flex items-center space-x-2">
-                            <img 
-                                src={Logo.src} 
-                                alt="mPulse Logo" 
-                                class="h-10 w-auto rounded-md"
-                            />
-                        </a>
+<!-- Conteneur externe pour le sticky -->
+<div class="sticky top-0 z-50 w-full py-4 bg-white/80 backdrop-blur-sm">
+    <header class="w-full flex justify-center px-4">
+        <div class="bg-[#00377d] text-white md:rounded-full shadow-lg w-full max-w-6xl">
+            <div class="container mx-auto px-4 sm:px-6 py-3">
+                <div class="flex items-center justify-between">
+                    <!-- Logo -->
+                    <a href="/" class="flex items-center space-x-2 flex-shrink-0">
+                        <img 
+                            src={Logo.src} 
+                            alt="mPulse Logo" 
+                            class="h-8 w-auto md:h-10 rounded-md"
+                        />
+                    </a>
 
-                        
-                        <!-- Menu desktop -->
-                        <nav class="hidden md:flex items-center space-x-6">
-                            {navItems.map((item) => (
-                                <a 
-                                    href={item.path}
-                                    class="font-medium transition-colors duration-200 text-white hover:text-secondary/80 py-2 px-4 rounded-full hover:bg-white/10"
-                                >
-                                    {item.name}
-                                </a>
-                            ))}
-                        </nav>
-
-                        <div class="flex items-center space-x-3">
-                            <div class="hidden md:flex items-center space-x-3">
-                                <a 
-                                    href="#contact" 
-                                    class="px-4 py-2 border border-[#ffd100] text-[#ffd100] rounded-full hover:bg-secondary hover:text-white transition-colors font-medium"
-                                >
-                                    Contactez-nous
-                                </a>
-                                <a href="#" class="px-4 py-2 bg-[#ffd100] text-white rounded-full hover:bg-secondary/90 transition-colors font-medium">
-                                    +221 76 723 88 88
-                                </a>
-                            </div>
-                            
-                            <!-- Bouton burger -->
-                            <button 
-                                id="mobile-menu-button" 
-                                class="md:hidden text-white focus:outline-none p-2 rounded-full hover:bg-white/10"
-                                aria-label="Menu mobile"
-                                aria-expanded="false"
+                    <!-- Menu desktop -->
+                    <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2 flex-wrap justify-center">
+                        {navItems.map((item) => (
+                            <a 
+                                href={item.path}
+                                class="nav-link font-medium transition-colors duration-200 text-white hover:text-[#ffd100] py-2 px-3 xl:px-4 rounded-full hover:bg-white/10 text-sm xl:text-base whitespace-nowrap"
+                                data-section={item.path.slice(1)}
                             >
-                                <svg id="menu-open-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                                </svg>
-                                <svg id="menu-close-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </button>
-                        </div>
+                                {item.name}
+                            </a>
+                        ))}
+                    </nav>
+
+                    <!-- Boutons desktop -->
+                    <div class="hidden lg:flex items-center space-x-2 flex-shrink-0">
+                        <a 
+                            href="#contact" 
+                            class="px-3 py-2 border border-[#ffd100] text-[#ffd100] rounded-full hover:bg-[#ffd100] hover:text-[#00377d] transition-colors font-medium text-sm whitespace-nowrap"
+                        >
+                            Contactez-nous
+                        </a>
+                        <a 
+                            href="#" 
+                            class="px-3 py-2 bg-[#ffd100] text-[#00377d] rounded-full hover:bg-[#ffd100]/90 transition-colors font-medium text-sm whitespace-nowrap"
+                        >
+                            +221 76 723 88 88
+                        </a>
                     </div>
                     
-                    <!-- Menu mobile -->
-                    <div 
-                        id="mobile-menu" 
-                        class="hidden md:hidden h-0 overflow-hidden transition-all duration-300 ease-in-out mt-3"
-                    >
-                        <div class="flex flex-col space-y-2 pt-4 pb-6 bg-primary rounded-2xl p-4">
-                            {navItems.map((item) => (
-                                <a 
-                                    href={item.path} 
-                                    class="px-4 py-3 rounded-full transition-colors text-white hover:bg-white/10"
-                                >
-                                    {item.name}
-                                </a>
-                            ))}
-                            <div class="pt-4 mt-2 border-t border-white/20 space-y-3">
-                                <a 
-                                    href="#contact" 
-                                    class="block px-4 py-3 text-center border border-secondary text-secondary rounded-full hover:bg-secondary hover:text-white transition-colors"
-                                >
-                                    Contactez-nous
-                                </a>
-                                <a 
-                                    href="#" 
-                                    class="block px-4 py-3 text-center bg-secondary text-white rounded-full hover:bg-secondary/90 transition-colors"
-                                >
-                                    Essai gratuit
-                                </a>
-                            </div>
+                    <!-- Bouton burger avec toggle pure CSS -->
+                    <label for="mobile-menu-toggle" class="lg:hidden text-white focus:outline-none p-2 rounded-full hover:bg-white/10 flex-shrink-0 cursor-pointer">
+                        <!-- Icone menu -->
+                        <svg class="h-6 w-6 peer-checked:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <!-- Icone fermer -->
+                        <svg class="h-6 w-6 hidden peer-checked:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </label>
+                </div>
+                
+                <!-- Menu mobile avec toggle pure CSS -->
+                <input type="checkbox" id="mobile-menu-toggle" class="hidden peer" />
+                <div class="lg:hidden h-0 overflow-hidden transition-all duration-500 ease-in-out peer-checked:h-auto peer-checked:py-2 mt-3">
+                    <div class="flex flex-col space-y-2 pt-4 pb-6 bg-primary rounded-2xl p-4">
+                        {navItems.map((item) => (
+                            <a 
+                                href={item.path} 
+                                class="nav-link-mobile px-4 py-3 rounded-full transition-colors text-white hover:bg-white/10 text-center"
+                                data-section={item.path.slice(1)}
+                            >
+                                {item.name}
+                            </a>
+                        ))}
+                        <div class="pt-4 mt-2 border-t border-white/20 space-y-3">
+                            <a 
+                                href="#contact" 
+                                class="block px-4 py-3 text-center border border-[#ffd100] text-[#ffd100] rounded-full hover:bg-[#ffd100] hover:text-[#00377d] transition-colors"
+                            >
+                                Contactez-nous
+                            </a>
+                            <a 
+                                href="#" 
+                                class="block px-4 py-3 text-center bg-[#ffd100] text-[#00377d] rounded-full hover:bg-[#ffd100]/90 transition-colors"
+                            >
+                                +221 76 723 88 88
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </header>
-    </div>
+        </div>
+    </header>
+</div>
 
-    <script>
-        // Gestion du menu mobile
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuOpenIcon = document.getElementById('menu-open-icon');
-            const menuCloseIcon = document.getElementById('menu-close-icon');
+<style>
+    /* Animation pour le menu mobile */
+    #mobile-menu-toggle:checked ~ div {
+        max-height: 500px;
+        transition: all 0.5s ease-in-out;
+    }
+    
+    #mobile-menu-toggle:not(:checked) ~ div {
+        max-height: 0;
+        transition: all 0.5s ease-in-out;
+    }
+
+    /* Style pour l'élément actif */
+    .nav-link.active,
+    .nav-link-mobile.active {
+        /* background-color: #ffd100 !important; */
+        color: #ffd100 !important;
+        font-weight: 600;
+    }
+</style>
+
+<script>
+    // Gestion de la navigation active
+    document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('.nav-link, .nav-link-mobile');
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle') as HTMLInputElement | null;
+        
+        // Fonction pour mettre à jour les liens actifs
+        function updateActiveLink() {
+            const sections = document.querySelectorAll('section[id]');
+            let currentSection = '';
             
-            if (menuButton) {
-                menuButton.addEventListener('click', () => {
-                    const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
-                    
-                    // Basculer l'état
-                    menuButton.setAttribute('aria-expanded', (!isExpanded).toString());
-                    
-                    // Animation du menu
-                    if (isExpanded) {
-                        if (mobileMenu) {
-                            mobileMenu.classList.add('h-0');
-                            mobileMenu.classList.remove('h-auto', 'py-2');
-                        }
-                        if (menuOpenIcon) menuOpenIcon.classList.remove('hidden');
-                        if (menuCloseIcon) menuCloseIcon.classList.add('hidden');
-                        document.body.classList.remove('overflow-hidden');
-                    } else {
-                        if (mobileMenu) {
-                            mobileMenu.classList.remove('h-0');
-                            mobileMenu.classList.add('h-auto', 'py-2');
-                        }
-                        if (menuOpenIcon) menuOpenIcon.classList.add('hidden');
-                        if (menuCloseIcon) menuCloseIcon.classList.remove('hidden');
-                        document.body.classList.add('overflow-hidden');
-                    }
-                });
-            }
-        });
-    </script>
-
-    <style>
-        /* Animation fluide pour le menu mobile */
-        #mobile-menu {
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            // Trouver la section visible
+            sections.forEach((section: Element) => {
+                const sectionElement = section as HTMLElement;
+                const sectionTop = sectionElement.offsetTop - 100;
+                const sectionHeight = sectionElement.clientHeight;
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    currentSection = section.id;
+                }
+            });
+            
+            // Mettre à jour les liens
+            navLinks.forEach((link: Element) => {
+                const linkElement = link as HTMLElement;
+                const section = link.getAttribute('data-section');
+                if (section === currentSection) {
+                    linkElement.classList.add('active');
+                } else {
+                    linkElement.classList.remove('active');
+                }
+            });
         }
         
-        /* Empêche le scroll quand le menu est ouvert */
-        body.overflow-hidden {
-            overflow: hidden;
-        }
-    </style>
+        // Écouter le scroll
+        window.addEventListener('scroll', updateActiveLink);
+        
+        // Fermer le menu mobile après clic sur un lien
+        navLinks.forEach((link: Element) => {
+            link.addEventListener('click', function(e: Event) {
+                const target = e.currentTarget as HTMLAnchorElement;
+                const targetId = target.getAttribute('href');
+                
+                if (targetId && targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+                
+                // Fermer le menu mobile
+                if (mobileMenuToggle && window.innerWidth < 1024) {
+                    mobileMenuToggle.checked = false;
+                }
+            });
+        });
+        
+        // Initialiser l'état actif au chargement
+        updateActiveLink();
+    });
+</script>
